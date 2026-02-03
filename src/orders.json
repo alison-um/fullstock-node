@@ -1,0 +1,62 @@
+[
+  {
+    "id": "WAx_Kj-lAJOLSjFxCXreB",
+    "cliente": {
+      "email": "correo@gmail.com",
+      "nombre": "nombress",
+      "apellido": "pspsps",
+      "compania": "company",
+      "direccion": "direction",
+      "ciudad": "cityyyy",
+      "pais": "peru",
+      "provincia": "lima",
+      "cod_postal": "0111",
+      "telefono": "900252526"
+    },
+    "products": [
+      {
+        "id": 12,
+        "name": "Taza Git Hub",
+        "description": "El complemento perfecto para tu arquitectura: una taza que entiende tu pasión por el desarrollo moderno.",
+        "price": 12,
+        "imagePath": "/images/tazas/taza-github.png",
+        "imageDescription": "Taza con el logo de Git Hub"
+      },
+      {
+        "id": 16,
+        "name": "Sticker de Docker",
+        "description": "Pega tu pasión por el código en cualquier superficie y deja claro cuál es tu stack favorito.",
+        "price": 10,
+        "imagePath": "/images/stickers/sticker-docker.png",
+        "imageDescription": "Sticker de VSCode"
+      }
+    ],
+    "total": 22
+  },
+  {
+    "id": "acZKypQs8uRZ7DaenKGp1",
+    "cliente": {
+      "email": "correo2@gmail.com",
+      "nombre": "nombresssssss",
+      "apellido": "pspspsasssss",
+      "compania": "companyysssss",
+      "direccion": "directionssssssssss",
+      "ciudad": "cityyyysss",
+      "pais": "peru",
+      "provincia": "limasssssssssss",
+      "cod_postal": "0111ssssss",
+      "telefono": "900252526sss"
+    },
+    "products": [
+      {
+        "id": 1,
+        "name": "Polo React",
+        "description": "Viste tu pasión por React con estilo y comodidad en cada línea de código.",
+        "price": 20,
+        "imagePath": "/images/polos/polo-react.png",
+        "imageDescription": "Polo gris con el logo de React"
+      }
+    ],
+    "total": 20
+  }
+]

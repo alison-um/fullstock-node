@@ -1,0 +1,106 @@
+/* styles/1-settings/colors.css */
+
+:root {
+    /* Colores base */
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+
+    /* 12 niveles de accent */
+    --accent-1: hsl(240, 100%, 100%);
+    --accent-2: hsl(240, 100%, 99%);
+    --accent-3: hsl(236, 88%, 97%);
+    --accent-4: hsl(238, 100%, 95%);
+    --accent-5: hsl(237, 100%, 93%);
+    --accent-6: hsl(238, 100%, 90%);
+    --accent-7: hsl(238, 82%, 85%);
+    --accent-8: hsl(238, 74%, 77%);
+    --accent-9: hsl(240, 60%, 60%);
+    --accent-10: hsl(240, 55%, 56%);
+    --accent-11: hsl(242, 50%, 55%);
+    --accent-12: hsl(238, 43%, 27%);
+
+    /* 12 niveles de accent + alpha  */
+    --accent-a1: hsla(240, 100%, 50%, 0.008); /**/
+    --accent-a2: hsla(240, 100%, 50%, 0.027);
+    --accent-a3: hsla(236, 100%, 47%, 0.059);
+    --accent-a4: hsla(237, 100%, 50%, 0.098);
+    --accent-a5: hsla(237, 100%, 50%, 0.145);
+    --accent-a6: hsla(238, 100%, 50%, 0.204);
+    --accent-a7: hsla(238, 100%, 45%, 0.278);
+    --accent-a8: hsla(238, 100%, 43%, 0.392);
+    --accent-a9: hsla(240, 100%, 38%, 0.643);
+    --accent-a10: hsla(240, 100%, 36%, 0.682);
+    --accent-a11: hsla(242, 100%, 34%, 0.675);
+    --accent-a12: hsla(238, 100%, 14%, 0.847);
+
+    --accent-contrast: var(--white);
+
+
+    /* 12 niveles neutral  */
+    --neutral-1: hsl(240, 20%, 99%);
+    --neutral-2: hsl(240, 20%, 98%);
+    --neutral-3: hsl(240, 11%, 95%);
+    --neutral-4: hsl(240, 10%, 92%);
+    --neutral-5: hsl(230, 11%, 89%);
+    --neutral-6: hsl(240, 10%, 86%);
+    --neutral-7: hsl(233, 10%, 82%);
+    --neutral-8: hsl(231, 10%, 75%);
+    --neutral-9: hsl(231, 6%, 57%);
+    --neutral-10: hsl(226, 5%, 53%);
+    --neutral-11: hsl(220, 6%, 40%);
+    --neutral-12: hsl(210, 13%, 13%);
+
+    
+    /* 12 niveles neutral + alpha */
+    --neutral-a1: hsla(240, 100%, 17%, 0.012);
+    --neutral-a2: hsla(240, 100%, 17%, 0.024);
+    --neutral-a3: hsla(240, 100%, 10%, 0.059);
+    --neutral-a4: hsla(240, 100%, 9%, 0.09);
+    --neutral-a5: hsla(229, 100%, 10%, 0.122);
+    --neutral-a6: hsla(240, 100%, 9%, 0.149);
+    --neutral-a7: hsla(232, 100%, 9%, 0.196);
+    --neutral-a8: hsla(230, 100%, 9%, 0.275);
+    --neutral-a9: hsla(230, 100%, 6%, 0.455);
+    --neutral-a10: hsla(224, 100%, 5%, 0.498);
+    --neutral-a11: hsla(219, 100%, 4%, 0.624);
+    --neutral-a12: hsla(207, 100%, 2%, 0.89);
+
+    --neutral-contrast: var(--white);
+
+    /* Tokens de color */
+    --background: var(--white);
+    --foreground: var(--neutral-12);
+    --accent-background: var(--accent-3);
+    --accent-foreground: var(--accent-11);
+    --muted-background: var(--neutral-a2);
+    --muted-foreground: var(--neutral-11);
+    --primary-background: var(--accent-9);
+    --primary-foreground: var(--accent-contrast);
+    --secondary-background: var(--neutral-3);
+    --secondary-foreground: var(--neutral-11);
+    --border: var(--neutral-7);
+    --outline: var(--blue-9);
+    --separator: var(--gray-6);
+    --primary-background-hover: var(--accent-10);
+    --secondary-background-hover: var(--neutral-4);
+    --border-hover: var(--neutral-8);
+}
+
+
+
+
+
+/* Nivel	Caso de Uso
+    1	Fondo de la aplicación
+    2	Fondo sutil
+    3	Fondo de elemento de la interfaz de usuario
+    4	Fondo de elemento de la interfaz en hover
+    5	Fondo de elemento activo/seleccionado
+    6	Bordes y separadores sutiles
+    7	Bordes de elementos y anillos de enfoque
+    8	Borde de elemento de la interfaz en hover
+    9	Fondos sólidos
+    10	Fondos sólidos en hover
+    11	Texto de bajo contraste
+    12	Texto de alto contraste 
+*/

@@ -1,0 +1,26 @@
+/* COMPONENTE: products-grid */
+
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10); /*40px*/
+    width: 100%;
+}
+
+/*       Tablet -2 columnas de 15rem mín  */
+@media (min-width: 40rem) {
+    .products-grid {
+        
+        grid-template-columns: repeat(2, minmax(15rem, 1fr));
+        gap: 40px 32px;
+    }
+}
+
+/*       Desktop --3 columnas de 15rem mín  */
+@media (min-width: 64rem) {
+    .products-grid {
+        
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+        flex: 1;
+    }
+}

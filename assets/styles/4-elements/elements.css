@@ -1,0 +1,41 @@
+/* styles/4-elements/elements.css */
+
+/*  Esta CAPA incluye estilos base SIN USAR CLASES para etiquetas Html.
+    Estilizado por defecto para elementos HTML.     
+*/
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--family-text);
+  font-size: var(--font-size-4);  /* 16px */
+  line-height: var(--leading-6);  /* 24px */
+
+  color: var(--foreground);
+  background-color: var(--background);
+
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--family-heading);
+}
+
+code {
+  font-family: var(--family-code);
+}
+ 
+em {
+  font-family: var(--family-emphasis);
+}

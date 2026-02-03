@@ -1,0 +1,107 @@
+<%- include('partials/header'); %>
+
+    <main>
+      
+      <section class="hero">
+        <div class="hero__container container">
+          <div class="hero__content">
+            <h1 class="hero__titulo">
+              Nuevos productos <br>disponibles
+            </h1>
+            <p class="hero__texto">
+              Un pequeño lote de increíbles productos acaba de llegar.
+              <br>Agrega tus favoritos al carrito antes que se agoten.
+            </p> 
+                  
+            <a href="#categories">Compra ahora</a>
+                  
+          </div>
+        </div>
+      </section>
+
+      <section id="categories" class="categories container section">
+        <!-- BEN: Bloque, Elementos, Modificador -->
+        <div class="categories__intro">
+          <h2 class="categories__title">Compra por categoría</h2>
+          <p class="categories__description">
+            Explora nuestra selección de productos especialmente diseñados para desarrolladores web. Encuentra lo que buscas navegando por nuestras categorías de polos, tazas, stickers y más.
+          </p>
+        </div>
+        
+        <div class="categories__content">
+
+          <% categories.forEach((category) => { %>
+            <a href="/categories/<%=category.id%>" class="category">
+              <img 
+                src="<%=category.imagePath%>" 
+                alt="<%=category.imageDescription%>" 
+                class="category__image"
+              />
+              <h3 class="category__title"><%=category.name%></h3>
+              <p class="category__description">
+                  <%=category.description%>
+              </p>
+            </a>
+          <% }) %>
+          
+        </div>
+          
+      </section>
+      
+
+      <section class="quality-promise">
+            
+        <div class="container section">
+          <h3 class="quality-promise__titulo">Nuestra Promesa de Calidad</h3>
+
+          <div class="quality-promise__items">
+            <div class="quality-item">
+              <div class="quality-item__icon">
+                <img src="/graphics/quality-carro.png" alt="Vector de un carro simulando movimiento">
+              </div>
+              <h4 class="quality-item__title">Entrega rápida</h4>
+              <p class="quality-item__description">
+                Recibe tus productos en tiempo récord, directo a tu puerta, para que puedas disfrutar de ellos cuanto antes.
+              </p>
+            </div>
+
+            <div class="quality-item">
+              <div class="quality-item__icon">
+                <img src="/graphics/quality-polo.png" alt="Vector de un polo">
+              </div>
+              <h4 class="quality-item__title">Satisfacción Garantizada</h4>
+              <p class="quality-item__description">
+                Tu felicidad es nuestra prioridad. Si no estás 100% satisfecho, estamos aquí para ayudarte con cambios o devoluciones.
+              </p>
+            </div>
+
+            <div class="quality-item">
+              <div class="quality-item__icon">
+                <img src="/graphics/quality-medalla.png" alt="Vector de una medalla con un check">
+              </div>
+              <h4 class="quality-item__title">Materiales de Alta Calidad</h4>
+              <p class="quality-item__description">
+                Nos aseguramos de que todos nuestros productos estén hechos con materiales de la más alta calidad.
+              </p>
+            </div>
+
+            <div class="quality-item">
+              <div class="quality-item__icon">
+                <img src="/graphics/quality-idea.png" alt="Vector de un simbolo de idea, un foco">
+              </div>
+              <h4 class="quality-item__title">Diseños Exclusivos</h4>
+              <p class="quality-item__description">
+                Cada producto está diseñado pensando en los desarrolladores, con estilos únicos que no encontrarás en ningún otro lugar.
+              </p>
+            </div>
+
+          </div>
+        </div>
+          
+      </section>
+
+
+    </main>
+
+
+<%- include('partials/footer'); %>

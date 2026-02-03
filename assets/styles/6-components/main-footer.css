@@ -1,0 +1,125 @@
+.main-footer {
+    border-top: 1px solid hsla(240, 10%, 86%, 1);
+}
+
+.main-footer__top-content {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    gap: 32px;
+}
+/**/
+.main-footer__links-groups { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+
+
+.links-group {
+    min-width: 160px;    /*160px*/
+}
+.links-group__title {
+    margin-bottom: 24px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--foreground);
+}
+.links-group ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column; /* Los pone uno debajo del otro */
+    gap: 24px;
+}
+
+.links-group__link {
+    line-height: 20px;
+}
+
+.links-group__link a{
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--muted-foreground);
+}
+
+.links-group__link:hover {
+    color: var(--foreground);
+}
+
+
+
+.newsletter-form {
+    max-width: 328px;
+}
+
+.newsletter-form__title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: var(--foreground);
+
+    margin-bottom: 24px;
+}
+.newsletter-form__description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: var(--muted-foreground);
+    margin-bottom: 8px;
+}
+.newsletter-form__form {
+    display: inline-flex;
+    gap: 8px;
+}
+
+
+
+.main-footer__content {
+    padding-block: 24px;
+    border-top: 1px solid hsla(240, 10%, 86%, 1);
+}
+
+.main-footer__copyright {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* centrado */
+    text-align: center;
+    color: var(--muted-foreground);
+}
+
+
+@media (min-width: 40rem){
+    .main-footer__links-groups {
+        
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+}
+@media (min-width: 64rem) {
+    .main-footer__top-content {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between; 
+    }
+    .main-footer__links-groups {
+        max-width: 736px;
+        width: 100%;
+    }
+    .links-group {
+        width: 100%;
+    }
+    .newsletter-form {
+        max-width: 448px;
+    }
+    .newsletter-form__form {
+        width: 100%;
+    }
+}

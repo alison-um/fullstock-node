@@ -1,0 +1,56 @@
+<%- include('partials/header'); %>
+
+<main>
+
+  <section class="section-sm container">
+    <div class="product-detail">
+      <div class="product-detail__media">
+        <img src="<%=product.imagePath%>" 
+          alt="<%=product.imageDescription%>" 
+          class="product-detail__image"
+        />
+      </div>
+
+      <div class="product-detail__info">
+        <h1 class="product-detail__title"><%=product.name%></h1>
+        <span class="product-detail__price"><%=product.price%></span>
+        <p class="product-detail__description"><%=product.description%></p>
+        
+        <form 
+          action="/cart/add/<%=product.id%>" 
+          method="post" 
+          class="product-detail__button"
+          >
+          <input type="hidden" name="productId" >
+          <button type="submit">
+            Agregar al carrito
+          </button>
+        </form>
+          
+        <div class="product-detail__caracteristicas">
+          <h3 class="product-detail__caracteristicas-title">
+            Características
+          </h3>
+          <ul class="product-detail__caracteristicas-list">
+            <li class="product-detail__caracteristicas-item">
+                Estampado resistente que mantiene sus colores vibrantes lavado tras lavado. 
+            </li>
+            <li class="product-detail__caracteristicas-item">
+              Hecho de algodón suave que asegura comodidad y frescura.
+            </li>
+            <li class="product-detail__caracteristicas-item">
+              Costuras reforzadas para una mayor durabilidad. 
+            </li>
+            <li class="product-detail__caracteristicas-item">
+              Corte moderno que se adapta perfectamente al cuerpo.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+</main>
+
+<%- include('partials/footer'); %>

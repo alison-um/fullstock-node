@@ -1,0 +1,71 @@
+/* styles/3-generic/reset.css */
+
+/* 
+
+GENERIC RESET CSS:
+    Codeable tomó como base el Reset CSS de Josh Comeau y agregó unas pocas reglas adcionales.
+    Josh's Custom CSS Reset
+    https://www.joshwcomeau.com/css/custom-css-reset/
+
+*/
+
+*,
+*::before,
+*::after {    /*El selector * apunta a todos los elementos en la página. Los selectores *::before y *::after apuntan a los pseudo-elementos que a menudo se usan para agregar contenido decorativo o utilitario.*/
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;  /*propiedad específica de navegadores basados en WebKit (como Chrome y Safari). Mejora la legibilidad del texto al suavizar los bordes de las fuentes.*/
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;   /*cambia de inline a block*/
+  max-width: 100%;  /*el ancho no exced el 100% de su contenedor*/
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;    /*heredan todas las propiedades de fuente del elemento padre*/
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;    /*si una palabra es muy larga para caber en una linea (como una URL) se rompa y continue en la siguiente linea en lugar de desbordarse fuera de su contenedor*/
+}
+ 
+/* 
+  Codeable extra resetsss
+*/
+ 
+* {
+  padding: 0;
+  font: inherit;    /*Obliga a todos los elementos a heredar la fuente de su padre*/
+}
+
+/*
+
+RESET CSS:
+Esta hoja de estilos se encarga de eliminar los estilos por defecto que los navegadores aplican a los elementos HTML, para tener un punto de partida uniforme en todos los navegadores.
+Eliminar la mayoria de estilos por defecto como margenes, paddings, bordes, etc., para evitar inconsistencias entre navegadores.
+
+NORMALIZE CSS:
+Esta hoja de estilos se encarga de normalizar los estilos por defecto entre diferentes navegadores, asegurando que los elementos HTML tengan un aspecto y comportamiento consistente en todos ellos.
+
+*/

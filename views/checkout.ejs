@@ -1,0 +1,132 @@
+<%- include('partials/header'); %>
+<main class="checkout section-sm container">
+    <section class="checkout__products">
+                    
+        <h2 class="checkout__subtitle-orden">
+            Resumen de la orden
+        </h2>
+        <div class="checkout__list">
+            <!-- componente cart-item -->
+             <% cart.forEach((product) => { %>
+            <article class="cart-item">
+                <div class="cart-item__media cart-item__media--checkout">
+                    <img src="<%=product.imagePath%>" alt="" class="cart-item__image cart-item__image--checkout">
+                </div>
+                <div class="cart-item__detalles">
+                    <div class="cart-item__header">
+                        <p class="cart-item__producto"><%=product.name%></p>
+
+                    </div>
+                    <div class="cart-item__content cart-item__content--checkout">
+                        <p>3</p>
+                        <div class="cart-item__btnicon--checkout">
+                            <img src="/icons/x.jpg" alt="Indicador para cantidad por producto">
+                        </div>
+                        <p><%=product.price%></p>
+                    </div>
+                </div>
+            </article>
+            <% }) %>
+            
+
+            <div class="checkout__total">
+                <span>Total</span>
+                <span>$<%=total%></span>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- componente: checkout-form -->
+    <section class="checkout-form">
+
+        <form action="" method="post" class="checkout-form__group">
+
+            <fieldset class="checkout-form__contacto border-bottom">
+                <legend class="checkout-form__subtitle">Información de contacto</legend>
+                
+                <!-- componente:  form-field -->
+                <div class="form-field">
+                    <label for="email" class="label">Correo electrónico</label>
+                    <input type="email" id="email" name="email" >
+                </div>
+            </fieldset>
+
+            <fieldset class="checkout-form__envio">
+                <legend class="checkout-form__subtitle">Información de envío</legend>
+
+                <div class="checkout-form__envio-grupo">
+
+                    <div>  <!--Nombre y Ape-->
+                        <div class="form-field">
+                            <label for="nombre" class="label">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" >
+                        </div>
+                        <div class="form-field">
+                            <label for="apellido" class="label">Apellido</label>
+                            <input type="text" id="apellido" name="apellido" >
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="compania" class="label">Compañía</label>
+                        <input type="text" id="compania" name="compania" >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="direccion" class="label">Dirección</label>
+                        <input type="text" id="direccion" name="direccion" >
+                    </div>
+
+                    <div>  <!--Ciudad Pais-->
+
+                        <div class="form-field">
+                            <label for="ciudad" class="label">Ciudad</label>
+                            <input type="text" id="ciudad" name="ciudad" >
+                        </div>
+                        <div class="form-field">
+                            <label for="pais" class="label">País</label>
+                            <!-- componente: select -->
+                            <select id="pais" name="pais" >
+                                <option value="">Select</option>
+                                <option value="peru">Perú</option>
+                            </select>
+                        </div>
+                    </div>  
+
+                    <div>  <!--Prov CodigoP-->
+
+                        <div class="form-field">
+                            <label for="provincia" class="label">Provincia/Estado</label>
+                            <input type="text" id="provincia" name="provincia" >
+                        </div>
+                        <div class="form-field">
+                            <label for="cod_postal" class="label">Código postal</label>
+                            <input type="text" id="cod_postal" name="cod_postal" >
+                        </div>
+
+                    </div> 
+                    
+                    <div class="form-field">
+                        <label for="telefono" class="label">Teléfono</label>
+                        <input type="text" id="telefono" name="telefono" >
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <div class="checkout-form__button">
+                <button type="submit" >
+                    Confirmar Orden
+                </button>
+            </div>
+
+        </form>
+
+        
+
+    </section>
+</main>
+
+
+<%- include('partials/footer'); %>

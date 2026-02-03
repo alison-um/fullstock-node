@@ -1,0 +1,39 @@
+.select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%2360646c'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m19.5 8.25-7.5 7.5-7.5-7.5' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 2px center;
+    background-size: 16px;
+
+    width: 256px;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid #cdced6;
+    background-color: var(--white);
+    padding-block: 8px;
+    padding-inline: 12px;
+
+    font-weight: 400;
+    font-size: var(--font-size-3-5);
+    line-height: var(--leading-6);
+
+    transition: all 150ms ease-out; /* Para que el cambio a focus sea suave */
+    outline: none;
+}
+
+/*  state: focus */
+.select:focus {
+    outline: none;
+    box-shadow: 
+        0 0 0 2px var(--secondary-background), 
+        0 0 0 4px hsla(242, 50%, 55%, 1);
+}
+/*  state: disabled */
+.select:disabled {
+    color: var(--foreground);
+    cursor: not-allowed;                      /* Icono de "prohibido" en el mouse */
+}
+
+.select--checkout {
+    width: 100%;
+}

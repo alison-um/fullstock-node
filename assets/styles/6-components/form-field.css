@@ -1,0 +1,13 @@
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+
+@media (min-width: 40rem) {
+    .form-field {
+        width: 100%;
+    }
+}

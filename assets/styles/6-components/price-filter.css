@@ -1,0 +1,25 @@
+.price-filter {
+    max-width: var(--width-sm); /*384px*/
+}
+
+.price-filter__title {
+    font-weight: 500;
+    font-size: var(--font-size-3-5);
+    line-height: var(--leading-5);
+
+    /* Segun figma: components y pagina de category-catalog  a diferencia de Deskopt*/
+    margin-bottom: 24px;
+}
+
+.price-filter__labels {
+    display: flex;
+    gap: 24px;
+}
+
+
+.price-filter__label {
+    font-weight: 500;
+    font-size: var(--font-size-3-5);
+    line-height: 100%;
+}
+

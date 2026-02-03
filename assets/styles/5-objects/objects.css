@@ -1,0 +1,65 @@
+/* styles/5-objects/objects.css */
+
+
+/*    reglas CSS para estructura y el diseño (layout) de COMPONENTES REUTILIZABLES y abstractos 
+    Siempre se aplican a través de selector de clases CSS. 
+*/
+
+.container {
+  --padding: var(--space-4);      /*16*/
+ 
+  padding-inline: var(--padding); /* 16px */
+  max-width: var(--width-7xl);    /* 1280px  */
+  margin-inline: auto;            /* centra el contenedor horizontalmente */
+}
+ 
+@media (min-width: 40rem) {       /* pantalla mayor a 640px */
+  .container {
+    --padding: var(--space-6);    /*24px*/
+  }
+}
+ 
+@media (min-width: 64rem) {       /* pantalla mayor a 1024px */
+  .container {
+    --padding: var(--space-8);    /*32px*/
+  }
+} 
+
+
+
+.section {
+  --padding-section: var(--space-12);    /*48px*/
+  padding-block: var(--padding-section);
+}
+
+@media (min-width: 40rem) {       /* pantalla mayor a 640px */
+  .section {
+    --padding-section: var(--space-16);    /*64px*/
+  }
+}
+ 
+@media (min-width: 64rem) {       /* pantalla mayor a 1024px */
+  .section {
+    --padding-section: var(--space-24);    /*96px*/
+  }
+} 
+
+
+.section-sm {
+  --padding-section-sm: var(--space-12);    /*48px*/
+  padding-block: var(--padding-section-sm);
+}
+
+@media (min-width: 40rem) {       /* pantalla mayor a 640px */
+  .section-sm {
+    --padding-section-sm: var(--space-14);    /*56px*/
+  }
+}
+ 
+@media (min-width: 64rem) {       /* pantalla mayor a 1024px */
+  .section-sm {
+    --padding-section-sm: var(--space-16);    /*64px*/
+  }
+}
+
+

@@ -1,0 +1,10 @@
+.nav-item{
+    text-decoration: none;
+
+    color: var(--muted-foreground);
+    font-size: var(--font-size-3-5);
+    font-weight: var(--font-medium);
+    line-height: var(--leading-5);
+    /* margin-block: 22px; */
+    margin-inline: 12px;
+}

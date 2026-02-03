@@ -1,0 +1,6 @@
+/* styles/1-settings/breakpoints.css */
+
+:root {
+    --sm: 40rem;    /* >=640px */
+    --lg: 64rem;    /* >=1024px */
+}

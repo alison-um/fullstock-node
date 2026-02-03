@@ -1,0 +1,8 @@
+.hidden {
+  display: none;
+}
+
+
+.border-bottom {
+  border-bottom: 1px solid hsla(240, 10%, 86%, 1);
+}

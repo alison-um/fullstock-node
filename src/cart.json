@@ -1,0 +1,18 @@
+[
+  {
+    "id": 11,
+    "name": "Taza React",
+    "description": "El complemento perfecto para tu arquitectura: una taza que entiende tu pasión por el desarrollo moderno.",
+    "price": 12,
+    "imagePath": "/images/tazas/taza-react.png",
+    "imageDescription": "Taza con el logo de React"
+  },
+  {
+    "id": 2,
+    "name": "Polo JavaScript",
+    "description": "Viste tu pasión por React con estilo y comodidad en cada línea de código.",
+    "price": 20,
+    "imagePath": "/images/polos/polo-js.png",
+    "imageDescription": "Polo gris con el logo de React"
+  }
+]

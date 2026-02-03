@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <header class="header border-bottom">
+
+        <div class="header__topbar header__topbar--hidden">
+            <div class="header__topbar-wrapper container">
+                <div class="header__auth-links">
+                    <a href="#" class="header__auth-link">Iniciar sesión</a>
+                    <a href="#" class="header__auth-link">Crear una cuenta</a>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="container">
+
+            <div class="main-header main-header--tamaño main-header--border">
+                <a class="main-header__logo" href="/">
+                    <img src="/logos/logo_fullstack.svg" alt="FullStack">
+                </a>
+    
+                <nav class="main-nav">
+                    <div class="main-nav__list">
+                        
+                        <!-- Aqui se pondra ruta node ejs categories/id de categoria, categories/1 -->
+                        <a href="/categories/1" class="nav-item">Polos</a>
+    
+                        <a href="/categories/2" class="nav-item">Tazas</a>
+    
+                        <a href="/categories/3" class="nav-item">Sticker</a>
+    
+                    </div>
+                </nav>
+    
+    
+                <div class="main-header__icons">
+
+                    
+                    <div class="main-header__icons-group main-header__icons-group--hidden">
+                        <a href="#" class="main-header__icon">
+                            <img src="/icons/lupa.svg" alt="Lupa">
+                        </a>
+                        <a href="#" class="main-header__icon">
+                            <img src="/icons/user.svg" alt="User">
+                        </a>
+                    </div>
+
+                    <a href="/cart" class="main-header__icon main-header__icon--ultimo">
+                        <img src="/icons/carrito.svg" alt="Carrito">
+                    </a>
+
+                </div>
+    
+            </div>
+        </div>
+        <div class="container main-header--hidden">
+
+            <div class="main-header main-header--tamaño main-header--centrado">
+                <nav class="main-nav main-nav--hidden">
+                    <div class="main-nav__list">
+                        
+                        <!-- Aqui se pondra ruta node ejs categories/id de categoria, categories/1 -->
+                        <a href="/categories/1" class="nav-item">Polos</a>
+        
+                        <a href="/categories/2" class="nav-item">Tazas</a>
+        
+                        <a href="/categories/3" class="nav-item">Sticker</a>
+        
+                    </div>
+                </nav>
+            </div>
+        </div>
+        
+
+    </header>
+  </body>
+</html>

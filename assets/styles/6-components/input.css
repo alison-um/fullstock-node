@@ -1,0 +1,62 @@
+
+/* input type text */
+.input {
+    width: 215px;
+    height: 40px;
+    border-radius: 12px;
+    border: 1px solid hsla(233, 10%, 82%, 1);
+    background-color: var(--white);
+
+    padding-block: 8px;
+    padding-inline: 12px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+
+    transition: all 150ms ease-out; /* Para que el cambio a focus sea suave */
+    outline: none;
+}
+/* state: empty with placeholder */
+.input::placeholder {
+    color: var(--muted-foreground);
+}
+/* state: empty (sin contenido) */
+
+/*  state: filled (con contenido) */
+.input:not(:placeholder-shown) {
+    color: var(--foreground);
+}
+/*  state: focus */
+.input:focus {
+    outline: none;
+    box-shadow: 
+        0 0 0 2px var(--secondary-background), 
+        0 0 0 4px hsla(242, 50%, 55%, 1);
+}
+/*  state: disabled */
+.input:disabled {
+    color: var(--foreground);
+    cursor: not-allowed;    /* Icono de "prohibido" en el mouse */
+}
+
+
+
+
+
+.input--price {
+    max-width: 180px;
+    min-width: 116px;
+
+    width: 100%;
+}
+
+.input--checkout, .input--auth, .input--expanded {
+    width: 100%;
+}
+
+@media (min-width: 64rem) {
+    .input--price {
+        width: 116px;
+    }
+}

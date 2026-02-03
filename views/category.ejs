@@ -1,0 +1,66 @@
+<%- include('partials/header'); %>
+    <main>
+      <section class="products">
+        <div class="container border-bottom">
+          <div class="products__info section-sm">
+            <h1 class="products__category"><%=category.name%></h1>
+            <p class="products__description"><%=category.description%></p>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="products__content section-sm">
+            
+            <form action="/productos" method="get" class="price-filter">
+              <fieldset class="price-filter__fieldset">
+                <legend class="price-filter__title">Precio</legend>
+                  
+                <div class="price-filter__labels">
+                  <div class="price-filter__field">
+                    <label for="min-price" class="price-filter__label">Min</label>
+                    <input type="number" id="min-price" name="min-price" min="0" step="0.01" class="input input--price">
+                  </div>
+
+                  <div class="price-filter__field">
+                    <label for="max-price" class="price-filter__label">Max</label>
+                    <input type="number" id="max-price" name="max-price" min="0" step="0.01" class="input input--price">
+                  </div>
+                </div>
+                  
+                <button type="submit" id="btn-calcular">
+                  Filtrar productos
+                </button>
+              </fieldset>
+            </form>
+
+            <div class="products-grid">
+              <% products.forEach((product) => { %>
+                <a href="/products/<%=product.id%>" class="product">
+                  <div class="product__media">
+                    <span class="product__badge">🚀 Oferta</span>
+                    <img 
+                      src="<%=product.imagePath%>" 
+                      alt="<%=product.imageDescription%>" 
+                      class="product__image"
+                    />
+                  </div>
+                    
+                  <div class="product__info">
+                    <h3 class="product__title"><%=product.name%></h3>
+                    <p class="product__description"><%=product.description%></p>
+                    <span class="product__price"><%=product.price%></span>
+                  </div>
+                </a>   
+              <% }) %>       
+            </div>
+
+
+          </div>
+        </div>
+
+      </section>
+      
+    </main>
+
+
+<%- include('partials/footer'); %>

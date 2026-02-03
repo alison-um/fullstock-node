@@ -1,0 +1,31 @@
+
+.main-nav {
+    display: none;
+}
+
+.main-nav__list {
+    list-style: none;
+    
+    display: flex;
+    align-items: center;
+    
+}
+
+
+
+/*  PARA seccion de category-catalog , product  */
+.main-nav--hidden {
+    display: block;
+}
+
+@media (min-width: 40rem) {
+    .main-nav {
+        display: block; /* Vuelve a aparecer */
+    }
+
+    /*  PARA seccion de category-catalog , product  */
+    .main-nav--hidden {
+        display: none;
+    }
+}
+

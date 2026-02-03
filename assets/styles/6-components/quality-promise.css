@@ -1,0 +1,35 @@
+.quality-promise {
+    background-color: var(--muted-background);
+}
+
+.quality-promise__titulo {
+    font-weight: var(--font-bold);
+    font-size: var(--font-size-6);
+    line-height: var(--leading-8);
+    text-align: center;
+
+    margin-bottom: 48px;
+} 
+
+.quality-promise__items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+
+@media (min-width: 40rem) {
+    .quality-promise__items {
+      
+        grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
+        justify-content: center;
+    }
+}
+
+/* 3. Desktop  */
+@media (min-width: 64rem) {
+    .quality-promise__items {
+        
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

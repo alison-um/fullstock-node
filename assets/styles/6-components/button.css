@@ -1,0 +1,30 @@
+/* styles/6-components/button.css */
+
+.button {
+    text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;      /**/
+    
+    gap: 8px;
+
+    height: 32px;
+    
+    padding-inline: 10px;
+    padding-block: 6px;
+
+    font-weight: 500;
+
+    /* centrado */
+
+
+    font-size: var(--font-size-3-5);    /*14px*/
+    line-height: var(--leading-5);    /*20px*/
+
+    border: 1px solid hsla(0, 0%, 100%, 0);
+    
+    box-shadow: 0px 1px 2px 0px hsla(0, 0%, 0%, 0.05);
+    
+}
