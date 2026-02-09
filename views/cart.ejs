@@ -22,7 +22,6 @@
                 action="/cart/remove/<%=product.id%>" 
                 method="post" 
                 class="cart-item__action">
-                <!-- <input type="hidden" name="eliminarProd" > -->
 
                 <button type="submit" class="button button--outline button--sm cart-item__btnaction">
                   <div class="cart-item__btnicon">
@@ -81,22 +80,5 @@
   </section>
 </main>
 
-<!-- <h2>Carrito de compras</h2>
-
-<div class="flex-container" style="width: 576px; border: 1px solid #D9D9E0; display: flex; flex-direction: column;">
-  <% cart.forEach((product) => { %>
-    <div style="padding: 10px; border: 1px solid #D9D9E0;">
-      <p><%=product.name%></p>
-      <p><%=product.price%></p>
-    </div>
-  <% }) %>
-  <div style="padding: 10px; border: 1px solid #D9D9E0;">
-    <p>Total</p>
-    <p>$<%=total%></p>
-  </div>
-  <div style="padding: 10px; border: 1px solid #D9D9E0;">
-    <button>Continuar Compra</button>
-  </div>
-</div> -->
 
 <%- include('partials/footer'); %>

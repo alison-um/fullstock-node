@@ -1,18 +1,1 @@
-[
-  {
-    "id": 16,
-    "name": "Sticker de Docker",
-    "description": "Pega tu pasión por el código en cualquier superficie y deja claro cuál es tu stack favorito.",
-    "price": 10,
-    "imagePath": "/images/stickers/sticker-docker.png",
-    "imageDescription": "Sticker de VSCode"
-  },
-  {
-    "id": 13,
-    "name": "Taza Linux",
-    "description": "El complemento perfecto para tu arquitectura: una taza que entiende tu pasión por el desarrollo moderno.",
-    "price": 12,
-    "imagePath": "/images/tazas/taza-linux.png",
-    "imageDescription": "Taza con el logo de Linux"
-  }
-]
+[]

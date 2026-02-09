@@ -42,7 +42,7 @@ export async function saveCart(content) {
 
 
 
-// AÑADIDOS
+// A
 
 export async function getOrders() {
   try {

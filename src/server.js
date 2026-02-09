@@ -1,3 +1,13 @@
+/**
+  FULLSTOCK E-commerce
+
+  Desarrollado por: ALISON ABIGAIL MAMANI UCHASARA
+  GitHub: https://github.com/alison-um/fullstock-node
+
+  Puerto: 3001
+ */
+
+
 import express from "express";
 import {
   homeHandler,
@@ -5,7 +15,7 @@ import {
   productHandler,
   addProductHandler,
   cartHandler,
-  removeProductCartHandler,  //AÑADIDOS
+  removeProductCartHandler,  //A
   checkoutHandler,
   checkoutPostHandler,
   orderConfirmationHandler,
@@ -21,7 +31,7 @@ const port = 3001;
 app.set("view engine", "ejs");
 app.use(express.static("assets"));
 // express.urlencoded
-app.use(express.urlencoded({ extended: true }));  //AÑADIDOxd
+app.use(express.urlencoded({ extended: true }));  //A
 
 
 // Router
@@ -31,7 +41,7 @@ app.get("/products/:id", productHandler);
 app.post("/cart/add/:id", addProductHandler);
 app.get("/cart", cartHandler);
 
-//AÑADIDOS: 
+//A: 
 app.post("/cart/remove/:id", removeProductCartHandler);
 app.get("/checkout", checkoutHandler);
 app.post("/checkout", checkoutPostHandler);
