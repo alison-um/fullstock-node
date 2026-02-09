@@ -32,7 +32,11 @@
 
 
 @media (min-width: 40rem) {
+    .category {
+        flex: 1;
+    }
     .category__image {
         aspect-ratio: 4/5;
     }
 }
+

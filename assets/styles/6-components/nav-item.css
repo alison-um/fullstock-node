@@ -6,5 +6,5 @@
     font-weight: var(--font-medium);
     line-height: var(--leading-5);
     /* margin-block: 22px; */
-    margin-inline: 12px;
+    margin-inline: var(--space-3);
 }

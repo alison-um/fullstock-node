@@ -4,21 +4,21 @@
 
 .products__info {
     /* margin: 64px 0 40px 0; */
-    padding-bottom: 40px;
-    max-width: 768px;
+    padding-bottom: var(--space-10);
+    max-width: var(--width--3xl);
 }
 
 .products__category {
-    font-weight: 700;
+    font-weight: var(--font-bold);
     font-size: var(--font-size-9);
     line-height: var(--leading-10); /*40px*/
     color: var(--foreground);
 
-    margin-bottom: 16px;
+    margin-bottom: var(--space-4);
 }
 
 .products__description {
-    font-weight: 400;
+    font-weight: var(--font-normal);
     font-size: var(--font-size-3-5);
     line-height: var(--leading-5); /*20px*/
 
@@ -27,7 +27,7 @@
 
 
 .products__content {
-    padding-top: 40px;
+    padding-top: var(--space-10);
     /* padding-inline: 32px; */
 
     display: flex;
@@ -35,11 +35,8 @@
     gap: var(--space-8);/*32px*/
 }
 
-/* --- 3. Desktop (3 columnas de 15rem mín) --- */
+/*      Desktop 3 columnas de 15rem mín --- */
 @media (min-width: 64rem) {
-    /* .products__info {
-        padding-block: 64px 32px;
-    } */
     .products__content {
         flex-wrap: nowrap;
         /* margin-block: 32px 64px; */

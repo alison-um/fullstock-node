@@ -4,7 +4,7 @@
     max-width: var(--width-sm); /*384px*/
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: var(--space-6);
 
     border: none;
 
@@ -12,17 +12,17 @@
 }
 
 .price-filter__title {
-    font-weight: 500;
+    font-weight: var(--font-medium);
     font-size: var(--font-size-3-5);
     line-height: var(--leading-5);
 
     /* Segun figma: components y pagina de category-catalog  a diferencia de Deskopt*/
-    margin-bottom: 24px;
+    margin-bottom: var(--space-6);
 }
 
 .price-filter__labels {
     display: flex;
-    gap: 24px;
+    gap: var(--space-6);
 }
 
 .price-filter__field {
@@ -36,7 +36,7 @@
 
 
 .price-filter__label {
-    font-weight: 500;
+    font-weight: var(--font-medium);
     font-size: var(--font-size-3-5);
     line-height: 100%;
 }
@@ -49,6 +49,6 @@
 
     /* Segun figma: components y pagina de category-catalog  24px, segun desktop 40px */
     .price-filter {
-        gap: 40px;
+        gap: var(--space-10);
     }
 }

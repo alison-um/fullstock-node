@@ -22,15 +22,15 @@
 }
 
 .hero__titulo {
-    margin-bottom: 16px;
+    margin-bottom: var(--space-4);
     color: var(--white);
-    font-weight: 700;
+    font-weight: var(--font-bold);
     font-size: var(--font-size-9);  /*36px*/
     line-height: var(--leading-10);  /*40px*/
 }
 
 .hero__texto {
-    margin-bottom: 32px;
+    margin-bottom: var(--space-8);
 
     color: var(--white);
     font-weight: var(--normal);     /*400px*/

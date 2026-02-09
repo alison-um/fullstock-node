@@ -21,10 +21,10 @@
     right: 0;
     padding: 4px 8px;
     background-color: var(--primary-background);
-    border-bottom-left-radius: 12px;
+    border-bottom-left-radius: var(--rounded-xl);
 
     color: var(--primary-foreground);
-    font-weight: 500;
+    font-weight: var(--font-medium);
     font-size: var(--font-size-3-5);
     line-height: var(--leading-5);
 

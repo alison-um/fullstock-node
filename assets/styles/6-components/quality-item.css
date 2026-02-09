@@ -5,15 +5,15 @@
 
 .quality-item__icon {
     
-    display: flex;         /* Convertimos el div en contenedor flex */
-    justify-content: center; /* Centra horizontalmente el contenido (la img) */
-    align-items: center;    /* Centra verticalmente el contenido */
-    /*centrado en horizontal*/
-    margin-inline: auto;    /* Centra el DIV mismo dentro del padre */
+    display: flex;         
+    justify-content: center; 
+    align-items: center;    
+    
+    margin-inline: auto;   
 
-    margin-bottom: 24px;
-    width: 64px;
-    height: 64px;
+    margin-bottom: var(--space-6);
+    width: var(--space-16);
+    height: var(--space-16);
 }
 
 .quality-item__title {
@@ -21,7 +21,7 @@
     font-size: var(--font-size-3-5);
     line-height: var(--leading-5);
 
-    margin-bottom: 8px;
+    margin-bottom: var(--space-2);
 }
 
 .quality-item__description {

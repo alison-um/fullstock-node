@@ -43,11 +43,6 @@
     line-height: var(--leading-5);
 }
 
-/* cart item action    eliminar *//*MODIFICAR LUEGO A 40REM quitar margin*/
-/* .cart-item__eliminar {
-    margin-right: 23px;                 
-} */
-
 
 .cart-item__content {
     display: flex;
@@ -77,7 +72,7 @@
     border: 1px solid hsla(233, 10%, 82%, 1);
     background-color: hsla(0, 0%, 100%, 1);
     display: flex;
-    align-items: center;      /* Centrado vertical luego horizont*/
+    align-items: center;      
     justify-content: center;
 
     font-weight: var(--font-medium);

@@ -7,94 +7,31 @@
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */
-    gap: 32px;
+    gap: var(--space-8);
 }
 /**/
 .main-footer__links-groups { 
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 16px;
+    gap: var(--space-4);
 }
 
 
 
-.links-group {
-    min-width: 160px;    /*160px*/
-}
-.links-group__title {
-    margin-bottom: 24px;
-
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
-    color: var(--foreground);
-}
-.links-group ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column; /* Los pone uno debajo del otro */
-    gap: 24px;
-}
-
-.links-group__link {
-    height: 20px;
-    display: flex;
-    align-items: center;
-}
-
-.links-group__link a{
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 14px;
-    color: var(--muted-foreground);
-    line-height: 20px;
-}
-
-.links-group__link:hover {
-    color: var(--foreground);
-}
-
-
-
-.newsletter-form {
-    max-width: 328px;
-}
-
-.newsletter-form__title {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
-
-    color: var(--foreground);
-
-    margin-bottom: 24px;
-}
-.newsletter-form__description {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-
-    color: var(--muted-foreground);
-    margin-bottom: 8px;
-}
-.newsletter-form__form {
-    display: inline-flex;
-    gap: 8px;
-}
 
 
 
 .main-footer__content {
     height: 68px;
-    padding-block: 24px;
+    padding-block: var(--space-6);
     border-top: 1px solid hsla(240, 10%, 86%, 1);
 }
 
 .main-footer__copyright {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
+    font-weight: var(--font-normal);
+    font-size: var(--font-size-3-5);
+    line-height: var(--leading-5);
     /* centrado */
     text-align: center;
     color: var(--muted-foreground);
@@ -116,15 +53,6 @@
     }
     .main-footer__links-groups {
         max-width: 736px;
-        width: 100%;
-    }
-    .links-group {
-        width: 100%;
-    }
-    .newsletter-form {
-        max-width: 448px;
-    }
-    .newsletter-form__form {
         width: 100%;
     }
 }

@@ -34,9 +34,6 @@
     .categories__content {
         flex-direction: row;;
     }
-    .category {
-        flex: 1;
-    }
     .categories__title {
         font-size: var(--space-9); 
         line-height: var(--space-10);  
