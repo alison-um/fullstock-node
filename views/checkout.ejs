@@ -1,131 +1,135 @@
 <%- include('partials/header'); %>
-<main class="checkout section-sm container">
-    <section class="checkout__products">
-                    
-        <h2 class="checkout__subtitle-orden">
-            Resumen de la orden
-        </h2>
-        <div class="checkout__list">
-            <!-- componente cart-item -->
-             <% cart.forEach((product) => { %>
-            <article class="cart-item">
-                <div class="cart-item__media cart-item__media--checkout">
-                    <img src="<%=product.imagePath%>" alt="" class="cart-item__image cart-item__image--checkout">
-                </div>
-                <div class="cart-item__detalles">
-                    <div class="cart-item__header">
-                        <p class="cart-item__producto"><%=product.name%></p>
+<main class="checkout ">
+    <div class="checkout__content section-sm container">
 
+        <section class="checkout__products">
+                        
+            <h2 class="checkout__subtitle-orden">
+                Resumen de la orden
+            </h2>
+            <div class="checkout__list">
+                <!-- componente summary-item -->
+                <% cart.forEach((product) => { %>
+                <article class="summary-item border-bottom">
+                    <div class="summary-item__media">
+                        <img src="<%=product.imagePath%>" alt="" class="summary-item__image">
                     </div>
-                    <div class="cart-item__content cart-item__content--checkout">
-                        <p>3</p>
-                        <div class="cart-item__btnicon--checkout">
-                            <img src="/icons/x.jpg" alt="Indicador para cantidad por producto">
+                    <div class="summary-item__detalles">
+                        <div class="summary-item__header">
+                            <p class="summary-item__producto"><%=product.name%></p>
+    
                         </div>
-                        <p><%=product.price%></p>
+                        <div class="summary-item__content">
+                            <p class="summary-item__label">3</p>
+                            <div class="summary-item__btnicon">
+                                <img src="/icons/x.jpg" alt="Indicador para cantidad por producto">
+                            </div>
+                            <p class="summary-item__label"><%=product.price%></p>
+                        </div>
                     </div>
-                </div>
-            </article>
-            <% }) %>
-            
-
-            <div class="checkout__total">
-                <span>Total</span>
-                <span>$<%=total%></span>
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- componente: checkout-form -->
-    <section class="checkout-form">
-
-        <form action="" method="post" class="checkout-form__group">
-
-            <fieldset class="checkout-form__contacto border-bottom">
-                <legend class="checkout-form__subtitle">Información de contacto</legend>
+                </article>
+                <% }) %>
                 
-                <!-- componente:  form-field -->
-                <div class="form-field">
-                    <label for="email" class="label">Correo electrónico</label>
-                    <input type="email" id="email" name="email" >
+    
+                <div class="checkout__total">
+                    <span>Total</span>
+                    <span>$<%=total%></span>
                 </div>
-            </fieldset>
-
-            <fieldset class="checkout-form__envio">
-                <legend class="checkout-form__subtitle">Información de envío</legend>
-
-                <div class="checkout-form__envio-grupo">
-
-                    <div>  <!--Nombre y Ape-->
-                        <div class="form-field">
-                            <label for="nombre" class="label">Nombre</label>
-                            <input type="text" id="nombre" name="nombre" >
-                        </div>
-                        <div class="form-field">
-                            <label for="apellido" class="label">Apellido</label>
-                            <input type="text" id="apellido" name="apellido" >
-                        </div>
-                    </div>
-
-                    <div class="form-field">
-                        <label for="compania" class="label">Compañía</label>
-                        <input type="text" id="compania" name="compania" >
-                    </div>
-
-                    <div class="form-field">
-                        <label for="direccion" class="label">Dirección</label>
-                        <input type="text" id="direccion" name="direccion" >
-                    </div>
-
-                    <div>  <!--Ciudad Pais-->
-
-                        <div class="form-field">
-                            <label for="ciudad" class="label">Ciudad</label>
-                            <input type="text" id="ciudad" name="ciudad" >
-                        </div>
-                        <div class="form-field">
-                            <label for="pais" class="label">País</label>
-                            <!-- componente: select -->
-                            <select id="pais" name="pais" >
-                                <option value="">Select</option>
-                                <option value="peru">Perú</option>
-                            </select>
-                        </div>
-                    </div>  
-
-                    <div>  <!--Prov CodigoP-->
-
-                        <div class="form-field">
-                            <label for="provincia" class="label">Provincia/Estado</label>
-                            <input type="text" id="provincia" name="provincia" >
-                        </div>
-                        <div class="form-field">
-                            <label for="cod_postal" class="label">Código postal</label>
-                            <input type="text" id="cod_postal" name="cod_postal" >
-                        </div>
-
-                    </div> 
-                    
-                    <div class="form-field">
-                        <label for="telefono" class="label">Teléfono</label>
-                        <input type="text" id="telefono" name="telefono" >
-                    </div>
-                </div>
-
-            </fieldset>
-
-            <div class="checkout-form__button">
-                <button type="submit" >
-                    Confirmar Orden
-                </button>
+                
             </div>
+        </section>
+    
+        <!-- componente: checkout-form -->
+        <section class="checkout-form">
+    
+            <form action="" method="post" class="checkout-form__group">
+    
+                <fieldset class="checkout-form__contacto border-bottom">
+                    <legend class="checkout-form__subtitle">Información de contacto</legend>
+                    
+                    <!-- componente:  form-field -->
+                    <div class="form-field">
+                        <label for="email" class="label">Correo electrónico</label>
+                        <input type="email" id="email" name="email" class="input input--checkout">
+                    </div>
+                </fieldset>
+    
+                <fieldset class="checkout-form__envio">
+                    <legend class="checkout-form__subtitle">Información de envío</legend>
+    
+                    <div class="checkout-form__envio-grupo">
+    
+                        <div class="checkout-form__row">  <!--Nombre y Ape-->
+                            <div class="form-field">
+                                <label for="nombre" class="label">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" class="input input--checkout">
+                            </div>
+                            <div class="form-field">
+                                <label for="apellido" class="label">Apellido</label>
+                                <input type="text" id="apellido" name="apellido" class="input input--checkout">
+                            </div>
+                        </div>
+    
+                        <div class="form-field">
+                            <label for="compania" class="label">Compañía</label>
+                            <input type="text" id="compania" name="compania" class="input input--checkout">
+                        </div>
+    
+                        <div class="form-field">
+                            <label for="direccion" class="label">Dirección</label>
+                            <input type="text" id="direccion" name="direccion" class="input input--checkout">
+                        </div>
+    
+                        <div class="checkout-form__row">  <!--Ciudad Pais-->
+    
+                            <div class="form-field">
+                                <label for="ciudad" class="label">Ciudad</label>
+                                <input type="text" id="ciudad" name="ciudad" class="input input--checkout">
+                            </div>
+                            <div class="form-field">
+                                <label for="pais" class="label">País</label>
+                                <!-- componente: select -->
+                                <select id="pais" name="pais" class="select select--checkout">
+                                    <option value="">Select</option>
+                                    <option value="peru">Perú</option>
+                                </select>
+                            </div>
+                        </div>  
+    
+                        <div class="checkout-form__row">  <!--Prov CodigoP-->
+    
+                            <div class="form-field">
+                                <label for="provincia" class="label">Provincia/Estado</label>
+                                <input type="text" id="provincia" name="provincia" class="input input--checkout">
+                            </div>
+                            <div class="form-field">
+                                <label for="cod_postal" class="label">Código postal</label>
+                                <input type="text" id="cod_postal" name="cod_postal" class="input input--checkout">
+                            </div>
+    
+                        </div> 
+                        
+                        <div class="form-field">
+                            <label for="telefono" class="label">Teléfono</label>
+                            <input type="text" id="telefono" name="telefono" class="input input--checkout">
+                        </div>
+                    </div>
+    
+                </fieldset>
+    
+                <div class="checkout-form__button">
+                    <button type="submit" class="button button--primary button--xl button--carrito">
+                        Confirmar Orden
+                    </button>
+                </div>
+    
+            </form>
+    
+            
+    
+        </section>
 
-        </form>
-
-        
-
-    </section>
+    </div>
 </main>
 
 

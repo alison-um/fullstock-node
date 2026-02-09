@@ -5,10 +5,12 @@
 
 .quality-item__icon {
     
-    display: flex;         
-    justify-content: center; 
-    align-items: center;    
-    margin-inline: auto;    
+    display: flex;         /* Convertimos el div en contenedor flex */
+    justify-content: center; /* Centra horizontalmente el contenido (la img) */
+    align-items: center;    /* Centra verticalmente el contenido */
+    /*centrado en horizontal*/
+    margin-inline: auto;    /* Centra el DIV mismo dentro del padre */
+
     margin-bottom: 24px;
     width: 64px;
     height: 64px;

@@ -3,15 +3,16 @@
 .cart-item {
     display: flex;
     justify-content: space-between;
-    gap: 24px;
-    padding: 24px;
+    gap: var(--space-6);
+    padding: var(--space-6);
+    height: 168px;
 }
 
 .cart-item__media {
-    max-width: 80px;
+    max-width: var(--space-20); /*80*/
 
     background-color: var(--muted-background);
-    border-radius: 12px;
+    border-radius: var(--rounded-xl);
     aspect-ratio: 2/3;
     display: flex;
 }
@@ -33,33 +34,90 @@
     align-items: center;
 
     justify-content: space-between;
-    gap: 16px;
+    gap: var(--space-4);
 }
 
 .cart-item__producto {
-    font-weight: 400;
+    font-weight: var(--font-normal);
     font-size: var(--font-size-3-5);
     line-height: var(--leading-5);
 }
 
+/* cart item action    eliminar *//*MODIFICAR LUEGO A 40REM quitar margin*/
+/* .cart-item__eliminar {
+    margin-right: 23px;                 
+} */
 
 
 .cart-item__content {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: var(--space-2);
 
     /* align-items: start;       */
     justify-content: space-between;
 }
 .cart-item__precio {
-    font-weight: 500;
+    font-weight: var(--font-medium);
     font-size: var(--font-size-3-5);
     line-height: var(--leading-5);
-    margin-top: auto;
 }
 
+.cart-item__actions {           /* Precio, -  cant. + */
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+}
 /* actions */
 
+.cart-item__cantidad {
+    width: var(--space-8);
+    height: var(--space-8);
+    border-radius: var(--rounded-md);
+    border: 1px solid hsla(233, 10%, 82%, 1);
+    background-color: hsla(0, 0%, 100%, 1);
+    display: flex;
+    align-items: center;      /* Centrado vertical luego horizont*/
+    justify-content: center;
+
+    font-weight: var(--font-medium);
+    font-size: var(--font-size-3-5);
+    line-height: var(--leading-5);
+}
+
+.cart-item__action {
+    height: var(--space-7);
+    width: var(--space-7);
+}
+
+.cart-item__btnaction {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cart-item__btnicon {
+    width: var(--space-5);
+    height: var(--space-5);
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
+
+@media (min-width: 40rem){
+    .cart-item {
+        width: var(--width-xl)
+    }
+    .cart-item__content {
+        flex-direction: row;
+
+        align-items: end;      
+        justify-content: space-between;
+    }
+}

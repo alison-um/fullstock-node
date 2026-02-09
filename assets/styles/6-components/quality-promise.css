@@ -20,7 +20,8 @@
 
 @media (min-width: 40rem) {
     .quality-promise__items {
-      
+        /* auto-fit: crea tantas columnas como quepan respetando el minmax */
+        /* minmax(208px, 1fr): mínimo 208px, máximo reparte el espacio (1fr) */
         grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
         justify-content: center;
     }
@@ -29,7 +30,7 @@
 /* 3. Desktop  */
 @media (min-width: 64rem) {
     .quality-promise__items {
-        
+        /* Forzamos 4 columnas exactas de 1fr para que se vea en una sola fila */
         grid-template-columns: repeat(4, 1fr);
     }
 }

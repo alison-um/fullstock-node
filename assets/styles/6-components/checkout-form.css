@@ -1,0 +1,59 @@
+/* COMPONENTE: checkout-form  */
+
+.checkout-form {
+}
+
+.checkout-form__group {
+
+}
+
+.checkout-form__contacto {
+    border: none;
+    padding-bottom: var(--space-6);
+}
+
+.checkout-form__subtitle {
+    font-weight: var(--font-medium);
+    font-size: var(--font-size-4-5);
+    line-height: var(--leading-7);
+    
+    align-self: flex-start;
+    margin-bottom: var(--space-6);
+}
+
+.checkout-form__envio {
+    border: none;
+    margin-top: var(--space-6);
+}
+
+.checkout-form__envio-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.checkout-form__row {
+    display: flex;
+    flex-direction: column;     /*40rem flex-wrap: nowrap;*/
+    gap: var(--space-4);
+
+}
+
+
+.checkout-form__button {
+    margin-top: var(--space-6);
+}
+
+
+@media (min-width: 40rem) {
+    .checkout-form__row {
+        flex-direction: row;     
+        flex-wrap: nowrap;
+    }
+}
+
+@media(min-width: 64rem) {
+    .checkout-form {
+        width: 100%;
+    }
+}

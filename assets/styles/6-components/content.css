@@ -1,0 +1,318 @@
+
+.content {
+    --semi-negro: hsla(0, 0%, 9%, 1);
+    --plomo-oscuro: hsla(0, 0%, 32%, 1);
+    --plomo-medio:hsla(0, 0%, 64%, 1);
+    --plomo-claro: hsla(0, 0%, 83%, 1);
+    --semi-blanco: hsla(0, 0%, 96%, 1);
+    --azul-violeta: hsla(263, 70%, 50%, 1);
+    
+    --content-headings: var(--semi-negro);
+    --content-body: var(--semi-negro);
+    --content-captions: var(--plomo-oscuro);
+    --content-bold: var(--semi-negro);
+    --content-code: var(--semi-negro);
+    --content-pre-background: var(--semi-negro);
+    --content-pre-code: var(--semi-blanco);
+    --content-hr: var(--plomo-claro);
+    --content-td-border: var(--plomo-claro);
+    --content-th-border: var(--plomo-medio);
+    --content-links: var(--azul-violeta);
+    --content-markers: var(--azul-violeta);
+    --content-blockquote-border: var(--azul-violeta);
+
+    max-width: var(--width-3xl);
+}
+
+.content h1 {
+    font-weight: 800;
+    font-size: var(--font-size-9);
+    line-height: var(--leading-10);
+    color: var(--content-headings);
+
+    margin-bottom: var(--space-8);
+}
+
+.content h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: var(--leading-8);
+    color: var(--content-headings);
+
+    margin-top: var(--space-12);
+    margin-bottom: 24px;
+}
+
+.content h3 {
+    font-weight: 600;
+    font-size: var(--font-size-5);
+    line-height: var(--leading-8);
+    color: var(--content-headings);
+
+    margin-top: var(--space-8);
+    margin-bottom: 12px;
+}
+
+.content h4 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--content-headings);
+
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+.content ol, .content ul{
+    margin-block: 20px;
+
+    padding-left: 26px;
+
+    display: flex;
+    flex-direction: column; 
+    gap: 8px; 
+}
+.content li {
+    padding-left: 6px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: var(--leading-7);
+    color: var(--content-body);
+}
+.content li::marker {
+    color: var(--content-markers);
+}
+
+.content hr {
+    margin-block: var(--space-12);
+}
+
+
+.content p {
+    font-weight: var(--font-normal);
+    font-size: var(--font-size-4);
+    line-height: var(--leading-7);
+    color: var(--content-body);
+
+    margin-block: 20px;
+}
+
+.content strong {
+    font-weight: 700;
+    color: var(--content-body);
+}
+.content h1 strong,
+.content h2 strong,
+.content h3 strong,
+.content h4 strong,
+.content a strong,
+.content blockquote strong,
+.content th strong {
+  color: inherit;
+}
+.content h1 strong { font-weight: 900; }
+.content h2 strong { font-weight: 800; }
+.content h3 strong { font-weight: 700; }
+.content h4 strong { font-weight: 700; }
+
+.content em {
+    font-family: var(--family-text);
+    font-style: italic;
+    line-height: var(--leading-7);
+}
+
+.content a {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: var(--leading-7);
+    color: var(--content-links);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.content code {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: inherit;
+    color: var(--content-code);
+    font-family: 'Source Code Pro', monospace;
+}
+
+.content code::before,
+.content code::after {
+  content: '`';
+}
+
+.content h2 code {
+  font-size: 21px;
+}
+
+.content h3 code {
+  font-size: 18px;
+}
+
+.content h1 code,
+.content h2 code,
+.content h3 code,
+.content h4 code,
+.content a code,
+.content blockquote code,
+.content th code {
+  color: inherit;
+}
+
+.content pre {
+    background-color: var(--foreground);
+    border-radius: 6px;
+
+    padding-block: 12px;
+    padding-inline: 16px;
+
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--semi-blanco);
+}
+
+.content pre > code {
+  display: block;
+  font: inherit;
+  color: inherit;
+  white-space: pre;
+}
+.content pre > code::before,
+.content pre > code::after {
+  content: none;
+}
+
+.content img {
+    max-width: 100%;
+    height: auto;
+
+    display: block;
+
+    margin-block: var(--space-8);
+    margin-inline: auto;
+    border-radius: 6px;
+}
+
+.content figure {
+    margin-block: var(--space-8);
+}
+.content figure > * {
+    margin-block: 0;
+}
+.content figure img {
+    border-radius: 6px;
+}
+.content figure figcaption {
+    margin-top: 12px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: var(--content-captions);
+    text-align: center;
+}
+
+.content table {
+    width: 100%;
+    table-layout: fixed;
+
+    margin-block: var(--space-8);
+    border-collapse: collapse;
+}
+
+.content th,
+.content td {
+    padding: 0;
+    text-align: left;
+    vertical-align: middle;
+}
+.content thead tr {
+    border-bottom: 1px solid hsla(0, 0%, 64%, 1);
+}
+.content thead th {
+    padding-right: 8px;
+    padding-bottom: 8px;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+
+    color: var(--foreground);
+}
+
+.content tbody tr {
+    border-bottom: 1px solid hsla(0, 0%, 83%, 1);
+}
+.content tbody tr:last-child {
+  border-bottom: none;
+}
+.content tbody td {
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+
+    color: var(--foreground);
+}
+/* Si existe tfoot → último row del tbody usa borde fuerte */
+
+.content tfoot tr {
+    border-top: 1px solid hsla(0, 0%, 64%, 1);
+}
+
+.content tfoot td {
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+
+    color: var(--foreground);
+}
+
+
+
+.content blockquote {
+    margin-block: var(--space-8);
+    padding-left: 20px;
+
+    border-left: 4px solid var(--content-blockquote-border);
+}
+
+.content blockquote p {
+    font-family: var(--family-text);
+    font-weight: 500;
+    font-style: italic;
+    font-size: 16px;
+    line-height: var(--leading-7);
+
+    color: var(--foreground);
+
+    margin-bottom: 20px;
+}
+.content blockquote p:first-of-type::before {
+    content: "“";
+}
+.content blockquote p:last-of-type::after {
+    content: "”";
+}
+.content blockquote footer {
+    font-family: var(--family-text);
+    font-weight: 500;
+    font-style: italic;
+    font-size: var(--font-size-4);
+    line-height: var(--leading-7);
+
+    color: var(--foreground);
+}

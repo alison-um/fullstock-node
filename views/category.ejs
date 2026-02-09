@@ -11,8 +11,8 @@
         <div class="container">
           <div class="products__content section-sm">
             
-            <form action="/productos" method="get" class="price-filter">
-              <fieldset class="price-filter__fieldset">
+            <form action="/productos" method="get">
+              <fieldset class="price-filter">
                 <legend class="price-filter__title">Precio</legend>
                   
                 <div class="price-filter__labels">
@@ -27,7 +27,7 @@
                   </div>
                 </div>
                   
-                <button type="submit" id="btn-calcular">
+                <button type="submit" id="btn-calcular" class="button button--secondary button--xl">
                   Filtrar productos
                 </button>
               </fieldset>
@@ -60,6 +60,39 @@
 
       </section>
       
+      <!-- <h2><%=category.name%></h2>
+      <p><%=category.description%></p>
+      <hr />
+
+      <form action="" method="">
+        <label for="">Min</label>
+        <input type="text" name="" id="" />
+        <label for="">Max</label>
+        <input type="text" name="" id="" />
+        <button>Filtrar Productos</button>
+      </form> -->
+
+
+      <!-- <section>
+        <% products.forEach((product) => { %>
+          <a href="/products/<%=product.id%>">
+            <div class="product">
+              <img
+                class="product__image"
+                src="<%=product.imagePath%>"
+                alt="<%=product.imageDescription%>"
+              />
+              <h3 class="product__title"><%=product.name%></h3>
+              <p class="product__description">
+                <%=product.description%>
+              </p>
+              <p class="product_price">
+                <%=product.price%>
+              </p>
+            </div>
+          </a>
+        <% }) %>
+      </section> -->
     </main>
 
 

@@ -1,15 +1,18 @@
 /* styles/5-objects/objects.css */
 
+/* Podríamos crear un archivo css para cada objeto pero por el momento vamos a definir todos los objetos en un solo archivo */
 
-/*    reglas CSS para estructura y el diseño (layout) de COMPONENTES REUTILIZABLES y abstractos 
+/*    reglas CSS que definen la estructura y el diseño (layout) de COMPONENTES REUTILIZABLES y abstractos en tu interfaz de usuario (UI).
+    La capa Objects te permite construir el "esqueleto" de los patrones de diseño reutilizables, que luego serán "vestidos" con estilos visuales en la capa Components. 
+
     Siempre se aplican a través de selector de clases CSS. 
 */
 
 .container {
   --padding: var(--space-4);      /*16*/
  
-  padding-inline: var(--padding); /* 16px */
-  max-width: var(--width-7xl);    /* 1280px  */
+  padding-inline: var(--padding); /* 16px al lado izquierdo y derecho*/
+  max-width: var(--width-7xl);    /* 1280px de ancho  */
   margin-inline: auto;            /* centra el contenedor horizontalmente */
 }
  
@@ -61,5 +64,4 @@
     --padding-section-sm: var(--space-16);    /*64px*/
   }
 }
-
 

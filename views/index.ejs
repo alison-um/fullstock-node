@@ -1,7 +1,14 @@
 <%- include('partials/header'); %>
 
     <main>
-      
+      <!-- <div class="hero">
+        <h2>Nuevos productos disponibles</h2>
+        <p>
+          Un pequeño lote de increíbles productos acaba de llegar. Agrega tus
+          favoritos al carrito antes que se agoten.
+        </p>
+        <button>Comprar ahora</button>
+      </div> -->
       <section class="hero">
         <div class="hero__container container">
           <div class="hero__content">
@@ -13,14 +20,16 @@
               <br>Agrega tus favoritos al carrito antes que se agoten.
             </p> 
                   
-            <a href="#categories">Compra ahora</a>
+            <a href="#categories" class="button button--primary button--xl">Compra ahora</a>
                   
           </div>
         </div>
       </section>
 
       <section id="categories" class="categories container section">
-        <!-- BEN: Bloque, Elementos, Modificador -->
+        <!-- BEN: Bloque, Elementos, Modificador 
+              En este caso solo trabajaremos con Bloque y Elemento
+        -->
         <div class="categories__intro">
           <h2 class="categories__title">Compra por categoría</h2>
           <p class="categories__description">
@@ -48,6 +57,33 @@
           
       </section>
       
+      <!-- <section class="categories container">
+        <div class="categories__intro">
+          <h2 class="categories__title">Compra por categoría</h2>
+          <p class="categories__description">
+            Explora nuestra selección de productos especialmente diseñados para
+            desarrolladores web. Encuentra lo que buscas navegando por nuestras
+            categorías de polos, tazas, stickers y más.
+          </p>
+        </div>
+        <div class="categories__content">
+          <% categories.forEach((category) => { %>
+            <a href="/categories/<%=category.id%>">
+              <div class="category">
+                <img
+                  class="category__image"
+                  src="<%=category.imagePath%>"
+                  alt="<%=category.imageDescription%>"
+                />
+                <h3 class="category__title"><%=category.name%></h3>
+                <p class="category__description">
+                  <%=category.description%>
+                </p>
+              </div>
+            </a>
+          <% }) %>
+        </div>
+      </section> -->
 
       <section class="quality-promise">
             

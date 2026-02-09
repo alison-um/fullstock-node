@@ -1,0 +1,46 @@
+<%- include('partials/header'); %>
+        <main class="auth container section-sm">
+
+            <section class="auth__content">
+
+                <h1 class="auth__title">
+                    Crea una cuenta
+                </h1>
+
+                <form action="" method="post" class="auth__form">
+            
+                    <!-- componente:  form-field -->
+                    <div class="form-field">
+                        <label for="signup-email" class="label">Correo electrónico</label>
+                        <input type="email" id="signup-email" name="signup-email" placeholder="testino@gmail.com" class="input input--auth" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="signup-pass" class="label">Contraseña</label>
+                        <input type="password" id="signup-pass" name="signupPassword" class="input input--auth" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="signup-pass-confirm" class="label">Confirma tu contraseña</label>
+                        <input type="password" id="signup-pass-confirm" name="signupPassConfirm" class="input input--auth" required>
+                    </div>
+
+                    <div>
+                        <!-- Redirigir a index.html -->
+                        <button type="submit" class="button button--primary button--lg button--auth">
+                            Crear cuenta
+                        </button>
+                    </div>
+
+                </form>
+
+                <div class="auth__footer">
+                    <p class="auth__label">
+                        ¿Ya tienes una cuenta?
+                    </p>
+                    <a href="/log-in" class="auth__option">
+                        Inicia sesión
+                    </a>
+                </div>
+            </section>
+
+        </main>
+<%- include('partials/footer'); %>

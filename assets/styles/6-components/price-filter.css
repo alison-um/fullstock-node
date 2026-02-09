@@ -1,5 +1,14 @@
+
+
 .price-filter {
     max-width: var(--width-sm); /*384px*/
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    border: none;
+
+    min-width: 0;
 }
 
 .price-filter__title {
@@ -16,6 +25,15 @@
     gap: 24px;
 }
 
+.price-filter__field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+
+    min-width: 0;
+}
+
 
 .price-filter__label {
     font-weight: 500;
@@ -23,3 +41,14 @@
     line-height: 100%;
 }
 
+
+@media (min-width: 64rem) {
+    .price-filter {
+        max-width: var(--space-64); /*256px*/
+    }
+
+    /* Segun figma: components y pagina de category-catalog  24px, segun desktop 40px */
+    .price-filter {
+        gap: 40px;
+    }
+}

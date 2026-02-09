@@ -4,11 +4,21 @@
 }
 
 .main-nav__list {
+    /* 1. Quita los puntos/balas */
     list-style: none;
     
+    /* 2. Quita el espacio interno (padding-left) que traen por defecto */
+    /* padding: 0; */
+    
+    /* 3. Quita los márgenes que puedan venir del navegador */
+    /* margin: 0; */
+    
+    /* 4. Alinea los items en horizontal */
     display: flex;
     align-items: center;
     
+    /* 5. Espacio entre "Polos", "Tazas" y "Stickers" (usa tu variable de capa 1) */
+    /* gap: var(--space-4);  */
 }
 
 

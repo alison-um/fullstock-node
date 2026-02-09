@@ -3,6 +3,8 @@
 /* 
 
 GENERIC RESET CSS:
+Esta es la primera capa que modifica los estilos del documento. 
+Aqui se colocan las hojas de estilos de alto nivel de alcance global (NO a un elemento en particular como heading, p, etc., sino a todo el documento en GENERAL)
     Codeable tomó como base el Reset CSS de Josh Comeau y agregó unas pocas reglas adcionales.
     Josh's Custom CSS Reset
     https://www.joshwcomeau.com/css/custom-css-reset/
@@ -29,15 +31,15 @@ picture,
 video,
 canvas,
 svg {
-  display: block;   /*cambia de inline a block*/
-  max-width: 100%;  /*el ancho no exced el 100% de su contenedor*/
+  display: block;   /*cambia estos elementos que son inline por defecto a block, elimina espacio que puede aparecer debajo de imagenes.*/
+  max-width: 100%;  /*el ancho de un elemento no exceda el 100% de su contenedor.*/
 }
 
 input,
 button,
 textarea,
 select {
-  font: inherit;    /*heredan todas las propiedades de fuente del elemento padre*/
+  font: inherit;    /*heredan todas las propiedades de fuente (incluyendo font-family, font-size, font-weight, etc.) del elemento padre, asegurando consistencia tipográfica en formularios.*/
 }
 
 p,
@@ -47,16 +49,16 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;    /*si una palabra es muy larga para caber en una linea (como una URL) se rompa y continue en la siguiente linea en lugar de desbordarse fuera de su contenedor*/
+  overflow-wrap: break-word;    /*si una palabra es muy larga para caber en una linea (como una URL) se rompa y continue en la siguiente linea en lugar de desbordarse fuera de su contenedor.*/
 }
  
 /* 
-  Codeable extra resetsss
+  Codeable extra resets
 */
  
 * {
   padding: 0;
-  font: inherit;    /*Obliga a todos los elementos a heredar la fuente de su padre*/
+  font: inherit;    /*Obliga a todos los elementos a heredar la fuente de su padre.*/
 }
 
 /*

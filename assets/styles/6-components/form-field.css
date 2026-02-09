@@ -4,7 +4,10 @@
     gap: 8px;
 }
 
-
+/* <div class="form-field">
+    <label for="email" class="label">Correo electrónico</label>
+    <input type="email" id="email" name="email" class="input input--checkout">
+</div> */
 
 @media (min-width: 40rem) {
     .form-field {

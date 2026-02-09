@@ -2,27 +2,27 @@
             <div class="container">
                 <div class="section-sm main-footer__top-content">
 
-                    <div>
+                    <div class="main-footer__links-groups">
                         <!--    Componente segun figma: links-group -->
-                        <div>
+                        <div class="links-group">
                             <h5 class="links-group__title">Tienda</h5>
                             <ul>
-                                <li class="links-group__link"><a href="#">Polos</a></li>
-                                <li class="links-group__link"><a  href="#">Tazas</a></li>
-                                <li class="links-group__link"><a href="#">Stickers</a></li>
+                                <li class="links-group__link"><a href="/categories/1">Polos</a></li>
+                                <li class="links-group__link"><a  href="/categories/2">Tazas</a></li>
+                                <li class="links-group__link"><a href="/categories/3">Stickers</a></li>
                             </ul>
                         </div>
-                        <div>
+                        <div class="links-group">
                             <h5 class="links-group__title">Compañía</h5>
                             <ul>
-                                <li class="links-group__link"><a href="#">Quienes somos</a></li>
+                                <li class="links-group__link"><a href="/about">Quienes somos</a></li>
                                 <!-- Aqui ponemos del otro proyecto basico terminos y condiciones -->
-                                <li class="links-group__link"><a href="#">Términos y condiciones</a></li>
+                                <li class="links-group__link"><a href="/terminos">Términos y condiciones</a></li>
                                 <!-- Aqui no funciona el link -->
                                 <li class="links-group__link"><a href="#">Privacidad</a></li>
                             </ul>
                         </div>
-                        <div>
+                        <div class="links-group">
                             <h5 class="links-group__title">Conecta</h5>
                             <ul>
                                 <li class="links-group__link"><a href="#">WhatsApp</a></li>
@@ -34,25 +34,25 @@
                     
 
                     <!--    Componente segun figma: newsletter-form -->
-                    <div>
+                    <div class="newsletter-form">
                         <h5 class="newsletter-form__title">
                         Suscríbete a nuestro boletín
                         </h5>
                         <p class="newsletter-form__description">Recibe las últimas ofertas y descuentos en tu correo semanalmente.</p>
 
-                        <form action="" method="POST">
+                        <form action="/subscribe" method="POST" class="newsletter-form__form">
                             <!--    Componente segun figma: input -->
                             <input class="input input--expanded" name="email" type="email" placeholder="correo@dominio.com" required>
-                            <!--    Componente segun figma: buttin-->
+                            <!--    Componente segun figma: button button--secondary button--lg -->
                             <!-- boton estatico solo visual -->
-                            <button class="" type="submit">Suscribirse
+                            <button class="button button--secondary button--lg" type="submit">Suscribirse
                             </button>
                         </form>
                             
                     </div>
                 </div>
-                <div>
-                    <p class="main-footer__copyright">Todos los derechos reservados © Full Stock</p>
+                <div class="main-footer__content">
+                    <p class="main-footer__copyright">Todos los derechos reservados &copy; Full Stock</p>
                 </div>
             </div>
         </footer>

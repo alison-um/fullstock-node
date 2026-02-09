@@ -8,7 +8,7 @@
 .category__image{
     aspect-ratio: 3/2; /* proporcion entre ancho y alto */
     object-fit: cover; /* la imagen cubre todo el contenedor SIN DEFORMARLA */
-    border-radius: var(--rounded-xl); /* 12px  */
+    border-radius: var(--rounded-xl); /* 12px bordes redondeados */
     margin-bottom: var(--space-4);      /*16px*/
 }
 
@@ -17,15 +17,15 @@
     margin-bottom: var(--space-2);  /*8px*/
 
     font-weight: var(--font-semibold);  /*600*/
-    font-size: 16px;              /*16px*/
-    line-height: 24px;            /*24px*/  
+    font-size: var(--font-size-4);              /*16px*/
+    line-height: var(--leading-6);            /*24px*/  
 }
 
 /*  ............. */
 .category__description {
-    font-weight: 400;   /*400*/
-    font-size: 14px;    /*14px*/
-    line-height: 20px;  /*20px*/
+    font-weight: var(--font-normal);   /*400*/
+    font-size: var(--font-size-3-5);    /*14px*/
+    line-height: var(--leading-5);   /*20px*/
     color: var(--muted-foreground);
 }
 

@@ -45,9 +45,12 @@
 
 @import url("6-components/product-detail.css");
 
+@import url("6-components/cart.css");
 @import url("6-components/cart-item.css");
 
         /* pag. checkout */
+@import url("6-components/checkout.css");
+@import url("6-components/summary-item.css");
 @import url("6-components/checkout-form.css");
 @import url("6-components/form-field.css");
 @import url("6-components/label.css");
@@ -56,9 +59,10 @@
         /* pag. Orden confirmation */
 @import url("6-components/confirmation.css");
 
-@import url("6-components/about.css");
-
 @import url("6-components/auth.css");
+
+        /*pag de terminos y condiciones */
+@import url("6-components/content.css");
 
 /*  7. Utilities */
 @import url("7-utilities/utilities.css");
@@ -67,46 +71,8 @@
 
 
 
-/* PAGINA:  CART carrito     */
-
-.cart {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.cart__title {
-    font-weight: 700;
-    font-size: var(--font-size-7-5);
-    line-height: var(--leading-9);
-
-    margin-bottom: 48px;
-}
-
-.cart__content {
-    border-radius: var(--rounded-xl);
-    border: 1px solid hsla(240, 10%, 86%, 1);
-
-    max-width: 576px;
-    width: 100%;
-}
 
 
-.cart__total {
-    display: flex;
-    justify-content: space-between;
-    padding: 24px;
 
-    font-weight: 500;
-    font-size: var(--font-size-4);
-    line-height: var(--leading-6);
-}
-
-.cart__button {
-    padding: 24px;
-}
-
-
-/* PAGINA:     CHECKOUT    */
 
 

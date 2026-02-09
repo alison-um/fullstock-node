@@ -6,16 +6,16 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;      /**/
+    border-radius: var(--rounded-lg);      /**/
     
-    gap: 8px;
+    gap: var(--space-2); /* 8px */
 
-    height: 32px;
+    height: var(--space-8); /* 32px */
     
-    padding-inline: 10px;
-    padding-block: 6px;
+    padding-inline: var(--space-2-5);
+    padding-block: var(--space-1-5);
 
-    font-weight: 500;
+    font-weight: var(--font-medium);
 
     /* centrado */
 
@@ -27,4 +27,93 @@
     
     box-shadow: 0px 1px 2px 0px hsla(0, 0%, 0%, 0.05);
     
+}
+
+
+
+.button--primary {
+    background-color: var(--primary-background);
+    color: var(--primary-foreground);
+}
+
+.button--primary:hover {
+    background-color: var(--primary-background-hover);
+}
+
+.button--primary:focus {
+    box-shadow: 
+        0 0 0 2px var(--white), 
+        0 0 0 4px hsla(242, 50%, 55%, 1);
+}
+
+.button--secondary {
+    background-color: var(--secondary-background);
+    color: var(--secondary-foreground);
+}
+
+.button--secondary:hover {
+    background-color: var(--secondary-background-hover);
+}
+
+.button--secondary:focus {
+    box-shadow: 
+        0 0 0 2px var(--secondary-background), 
+        0 0 0 4px hsla(242, 50%, 55%, 1);
+}
+
+.button--outline {
+    background-color: hsla(0, 0%, 100%, 0);
+    color: var(--muted-foreground);
+    border: 1px solid hsla(233, 10%, 82%, 1);
+}
+.button--outline:hover {
+    background-color: var(--muted-background);
+}
+.button--outline:focus {
+    box-shadow: 
+        0 0 0 2px var(--secondary-background), 
+        0 0 0 4px hsla(242, 50%, 55%, 1);
+}
+
+.button--sm {
+    height: var(--space-6);
+
+    padding-inline: var(--space-2);
+    padding-block: var(--space-1);  /* 4px */
+
+    border-radius: var(--rounded-md);
+
+    font-size: var(--font-size-3);    /*12px*/
+    line-height: var(--leading-4);    /*16px*/
+}
+
+.button--lg {
+    height: var(--space-10); /* 40px */
+
+    padding-inline: var(--space-3-5); /* 14px */
+    padding-block: var(--space-2-5);  /* 10px */
+
+}
+
+.button--xl {
+    height: var(--space-12);  /*48px*/
+
+    padding-inline: var(--space-8); /* 32px */
+    padding-block: var(--space-3);  /* 12px */
+
+    font-size: var(--font-size-4);    /*16px*/
+    line-height: var(--leading-6);    /*24px*/
+}
+
+
+.button:hover{
+    /*duracion de 150: */
+    transition: background-color 150ms ease-out;
+}
+
+
+/* PAGINA DE DETALLES PRODUCTO / SIGNUP LOGIN */
+.button--carrito , .button--auth{
+    width: 100%;
+    /* max-width: 320px; */
 }

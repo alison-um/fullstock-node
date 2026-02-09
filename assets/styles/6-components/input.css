@@ -37,7 +37,7 @@
 /*  state: disabled */
 .input:disabled {
     color: var(--foreground);
-    cursor: not-allowed;    /* Icono de "prohibido" en el mouse */
+    cursor: not-allowed;                      /* Icono de "prohibido" en el mouse */
 }
 
 

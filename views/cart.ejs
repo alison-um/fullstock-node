@@ -7,7 +7,7 @@
           Carrito de compras
       </h1>
 
-      <div>
+      <div class="cart__content">
         <!-- componente cart-item -->
         <% cart.forEach((product) => { %>
         <article class="cart-item border-bottom">
@@ -24,7 +24,7 @@
                 class="cart-item__action">
                 <!-- <input type="hidden" name="eliminarProd" > -->
 
-                <button type="submit">
+                <button type="submit" class="button button--outline button--sm cart-item__btnaction">
                   <div class="cart-item__btnicon">
 
                     <img src="/icons/cart-eliminar.png" alt="" class=" ">
@@ -34,12 +34,12 @@
             </div>
             <div class="cart-item__content">
               <p class="cart-item__precio">$<%=product.price%></p>
-              <div>
+              <div class="cart-item__actions">
 
                 <form action="" method="post" class="cart-item__action">
                   <input type="hidden" name="restarCantidad" >
 
-                  <button type="submit">
+                  <button type="submit" class="button button--outline button--sm cart-item__btnaction">
                     <div class="cart-item__btnicon">
 
                       <img src="/icons/cart-menos.png" alt="" class=" ">
@@ -47,13 +47,13 @@
                   </button>
                 </form>
 
-                <p>3</p>
+                <p class="cart-item__cantidad">3</p>
 
                         
                 <form action="" method="post" class="cart-item__action">
                   <input type="hidden" name="agregarCantidad" >
 
-                  <button type="submit">
+                  <button type="submit" class="button button--outline button--sm cart-item__btnaction">
                     <div class="cart-item__btnicon">
 
                       <img src="/icons/cart-mas.png" alt="" class=" ">
@@ -73,7 +73,7 @@
           <span>$<%=total%></span>
         </div>
         <div class="cart__button">
-          <a href="/checkout">Continuar Compra</a>
+          <a href="/checkout" class="button button--primary button--xl button--carrito">Continuar Compra</a>
         </div>
 
       </div>
@@ -81,5 +81,22 @@
   </section>
 </main>
 
+<!-- <h2>Carrito de compras</h2>
+
+<div class="flex-container" style="width: 576px; border: 1px solid #D9D9E0; display: flex; flex-direction: column;">
+  <% cart.forEach((product) => { %>
+    <div style="padding: 10px; border: 1px solid #D9D9E0;">
+      <p><%=product.name%></p>
+      <p><%=product.price%></p>
+    </div>
+  <% }) %>
+  <div style="padding: 10px; border: 1px solid #D9D9E0;">
+    <p>Total</p>
+    <p>$<%=total%></p>
+  </div>
+  <div style="padding: 10px; border: 1px solid #D9D9E0;">
+    <button>Continuar Compra</button>
+  </div>
+</div> -->
 
 <%- include('partials/footer'); %>

@@ -3,23 +3,24 @@
 .products-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-10); /*40px*/
+    gap: 32px;
     width: 100%;
 }
 
-/*       Tablet -2 columnas de 15rem mín  */
+/* --- 2. Tablet (2 columnas de 15rem mín) --- */
 @media (min-width: 40rem) {
     .products-grid {
-        
+        /* repeat(2, ...) fuerza 2 columnas. 
+           minmax(15rem, 1fr) asegura que midan al menos 15rem pero crezcan equitativamente */
         grid-template-columns: repeat(2, minmax(15rem, 1fr));
-        gap: 40px 32px;
+        gap: 40px 32px;     /*segun Figma: Desktop*/
     }
 }
 
-/*       Desktop --3 columnas de 15rem mín  */
+/* --- 3. Desktop (3 columnas de 15rem mín) --- */
 @media (min-width: 64rem) {
     .products-grid {
-        
+        /* Cambiamos a 3 columnas exactas */
         grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
         flex: 1;
     }

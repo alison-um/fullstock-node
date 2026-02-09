@@ -1,5 +1,5 @@
 .header {
-    
+    border-bottom: 1px solid hsla(240, 10%, 86%, 1);
 }
 
 .header__topbar {
@@ -8,7 +8,7 @@
 }
 
 .header__topbar-wrapper {
-    padding-block: var(--space-2-5); /* 10px  */
+    padding-block: var(--space-2-5); /* 10px arriba y abajo */
 }
 
 .header__auth-links {
@@ -27,8 +27,3 @@
     text-decoration: none;
 }
 
-/* @media (min-width: 40rem) {
-    .header {
-        border-bottom: 1px solid hsla(240, 10%, 86%, 1);
-    }
-} */

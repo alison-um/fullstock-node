@@ -2,5 +2,104 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 64px;
+    height: 48px;
+    border-bottom: 1px solid hsla(240, 10%, 86%, 1);
+}
+
+.main-header__logo {
+    min-height: 40px;
+    width: 160px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-header__icons {
+    /* width: 40px; */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-header__icons-group {         /*Hacer tipo hidden en otras pag. que no sean login o signup*/
+    /* display: none; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding-right: 8px;
+}
+
+.main-header__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+}
+.main-header__icon img {
+    object-fit: cover;
+}
+
+.main-header__icon--ultimo {
+    position: relative; 
+    margin-left: 8px;
+}
+.main-header__icon--ultimo::before {
+    content: ""; 
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%); /* centrar verticalmente */
+    
+    width: 1px;
+    height: 24px;
+    background-color: hsla(240, 10%, 86%, 1); /* El color que prefieras */
+}
+
+/*  PARA 3ra fila de main header, seccion de category-catalog , product  */
+
+.main-header--centrado {
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+
+
+@media (min-width: 40rem) {
+    /*  PARA ocultar header de 3 fila abajo */
+    .main-header--hidden {
+        display: none;
+    }
+    .main-header {
+        border: none;
+        height: 64px;
+    }
+    .main-header__icons-group {         /*Hacer tipo hidden en otras pag. que no sean login o signup*/
+        gap: 12px;              /*MI PROPUESTA DE 12PX XD*/
+        padding-right: 12px;
+    }
+    .main-header__icon--ultimo {
+        margin-left: 12px;
+    }
+    .main-header__icon--ultimo::before {
+        left: -12px;        
+    }
+}
+
+@media (min-width: 64rem) {
+    .main-header__icons-group {   
+        gap: 16px;
+        padding-right: 16px;
+    }
+    .main-header__icon--ultimo{
+        margin-left: 16px;
+    }
+    .main-header__icon--ultimo::before {
+        left: -16px;        
+    }
 }
