@@ -50,7 +50,6 @@
     --neutral-11: hsl(220, 6%, 40%);
     --neutral-12: hsl(210, 13%, 13%);
 
-    
     /* 12 niveles neutral + alpha */
     --neutral-a1: hsla(240, 100%, 17%, 0.012);
     --neutral-a2: hsla(240, 100%, 17%, 0.024);
@@ -67,6 +66,7 @@
 
     --neutral-contrast: var(--white);
 
+
     /* Tokens de color */
     --background: var(--white);
     --foreground: var(--neutral-12);
@@ -79,8 +79,8 @@
     --secondary-background: var(--neutral-3);
     --secondary-foreground: var(--neutral-11);
     --border: var(--neutral-7);
-    --outline: var(--blue-9);
-    --separator: var(--gray-6);
+    --outline: var(--accent-11); /**/
+    --separator: var(--neutral-6);
     --primary-background-hover: var(--accent-10);
     --secondary-background-hover: var(--neutral-4);
     --border-hover: var(--neutral-8);

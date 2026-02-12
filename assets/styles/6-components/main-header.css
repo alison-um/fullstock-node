@@ -1,12 +1,19 @@
 .main-header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+    "logo actions"
+    "separator separator"
+    "nav nav";
     align-items: center;
-    height: var(--space-12);
-    border-bottom: 1px solid hsla(240, 10%, 86%, 1);
+
+    /* height: var(--space-12);  48 96 */
+    /* border-bottom: 1px solid hsla(240, 10%, 86%, 1); */
+    /* height: 97px; */
 }
 
 .main-header__logo {
+    grid-area: logo;
     min-height: var(--space-10);
     width: 160px;
 
@@ -14,25 +21,15 @@
     align-items: center;
     justify-content: center;
 }
-
-.main-header__icons {
-    /* width: var(--space-10); */
-    height: var(--space-10);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.main-header__icons-group {         /*Hacer tipo hidden en otras pag. que no sean login o signup*/
-    /* display: none; */
+.main-header__actions {
+    grid-area: actions;
+    height: var(--space-10); /*48px*/
+    margin-block: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: var(--space-2); 
-
-    padding-right: var(--space-2);
 }
-
 .main-header__icon {
     display: flex;
     align-items: center;
@@ -45,11 +42,11 @@
     object-fit: cover;
 }
 
-.main-header__icon--ultimo {
+.main-header__icon--cart {
     position: relative; 
     margin-left: var(--space-2);
 }
-.main-header__icon--ultimo::before {
+.main-header__icon--cart::before {
     content: ""; 
     position: absolute;
     left: -8px;
@@ -58,48 +55,63 @@
     
     width: 1px;
     height: var(--space-6);
-    background-color: hsla(240, 10%, 86%, 1); /* El color que prefieras */
+    background-color: var(--separator); /* El color que prefieras */
 }
 
-/*  PARA 3ra fila de main header, seccion de category-catalog , product  */
-
-.main-header--centrado {
-    display: flex;
-    justify-content: center;
-    border: none;
+.main-header__cart-badge {
+    position: absolute;
+        bottom: -0.25rem;
+  right: -0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: var(--rounded-full);
+  font-size: 0.75rem;
+  color: var(--primary-foreground);
+  background-color: var(--primary-background);
 }
+
+.main-header__separator {
+  grid-area: separator;
+  height: 1px;
+  background-color: var(--separator);
+}
+
 
 
 @media (min-width: 40rem) {
-    /*  PARA ocultar header de 3 fila abajo */
-    .main-header--hidden {
+    .main-header {
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas:
+        "logo nav actions";
+        height: var(--space-12); /*48px*/
+    }
+    .main-header__separator {
         display: none;
     }
-    .main-header {
-        border: none;
-        height: var(--space-16);
+    .main-header__actions {
+        gap: var(--space-3); 
     }
-    .main-header__icons-group {         /*Hacer tipo hidden en otras pag. que no sean login o signup*/
-        gap: var(--space-3);              /*MI PROPUESTA DE 12PX XD*/
-        padding-right: var(--space-3); 
+    .main-header__icon--cart {
+        position: relative; 
+        margin-left: var(--space-3);
     }
-    .main-header__icon--ultimo {
-        margin-left: var(--space-3); 
-    }
-    .main-header__icon--ultimo::before {
-        left: -12px;        
-    }
+    .main-header__icon--cart::before {
+        left: -12px;
+    }        
 }
 
 @media (min-width: 64rem) {
-    .main-header__icons-group {   
-        gap: var(--space-4);
-        padding-right: var(--space-4); 
+    .main-header__actions {
+        gap: var(--space-4); 
     }
-    .main-header__icon--ultimo{
-        margin-left: var(--space-4); 
+    .main-header__icon--cart {
+        position: relative; 
+        margin-left: var(--space-4);
     }
-    .main-header__icon--ultimo::before {
-        left: -16px;        
-    }
+    .main-header__icon--cart::before {
+        left: -16px;
+    }        
 }

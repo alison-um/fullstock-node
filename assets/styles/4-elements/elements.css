@@ -17,11 +17,7 @@ body {
 
   color: var(--foreground);
   background-color: var(--background);
-
-
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
+  
 }
 
 h1,

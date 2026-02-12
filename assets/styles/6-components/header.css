@@ -1,17 +1,16 @@
+
 .header {
-    border-bottom: 1px solid hsla(240, 10%, 86%, 1);
+position: sticky;
+        top: 0;
+        z-index: 50;
+        border-bottom: 1px solid var(--border);
+        background-color: var(--background);
 }
-
 .header__topbar {
-    background-color: var(--black);
-    /* min-height: var(--space-10); */
+        background-color: var(--black);
 }
-
-.header__topbar-wrapper {
-    padding-block: var(--space-2-5); /* 10px arriba y abajo */
-}
-
 .header__auth-links {
+    padding-block: var(--space-2-5); /* 10px */
     display: flex;
     justify-content: flex-end;
     gap: var(--space-4);  /* 16px */
@@ -19,11 +18,9 @@
     line-height: var(--leading-5);
     align-items: center;
 }
-
 .header__auth-link {
     color: var(--white);
     
     font-weight: var(--font-medium);
     text-decoration: none;
 }
-

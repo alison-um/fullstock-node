@@ -7,78 +7,85 @@
     <title>Document</title>
   </head>
   <body>
-    
-    <header class="header">
+    <div class="layout">
+        <!-- <div class="h__topbar">
+            <div class="h__auth-links container">
+                
+                <a href="/log-in" class="header__auth-link">Iniciar sesión</a>
+                <a href="/sign-up" class="header__auth-link">Crear una cuenta</a>
+                
+            </div>
+        </div> -->
+        <header class="header">
 
-        <div class="header__topbar header__topbar--hidden">
-            <div class="header__topbar-wrapper container">
-                <div class="header__auth-links">
+            <div class="header__topbar">
+                <div class="header__auth-links container">
+                    
                     <a href="/log-in" class="header__auth-link">Iniciar sesión</a>
                     <a href="/sign-up" class="header__auth-link">Crear una cuenta</a>
+                    
                 </div>
             </div>
-        </div>
 
-        
-        <div class="container">
+            
+            <div class="main-header container">
 
-            <div class="main-header">
                 <a class="main-header__logo" href="/">
-                    <img src="/logos/logo_fullstack.svg" alt="FullStack">
+                    <img src="/logos/logo_fullstack.svg" alt="FullStack inicio">
                 </a>
-    
-                <nav class="main-nav">
-                    <div class="main-nav__list">
-                        
-                        <!-- Aqui se pondra ruta node ejs categories/id de categoria, categories/1 -->
-                        <a href="/categories/1" class="nav-item">Polos</a>
-    
-                        <a href="/categories/2" class="nav-item">Tazas</a>
-    
-                        <a href="/categories/3" class="nav-item">Sticker</a>
-    
-                    </div>
-                </nav>
                 
-    
-                <div class="main-header__icons">
+                <div class="main-header__actions">
 
-                    <div class="main-header__icons-group main-header__icons-group--hidden">
-                        <a href="#" class="main-header__icon">
-                            <img src="/icons/search.svg" alt="Lupa">
-                        </a>
-                        <a href="/log-in" class="main-header__icon">
-                            <img src="/icons/user-2.svg" alt="User">
-                        </a>
-                    </div>
-
-                    <a href="/cart" class="main-header__icon main-header__icon--ultimo">
-                        <img src="/icons/shopping-cart.svg" alt="Carrito">
+                    
+                    <a href="#" class="main-header__icon">
+                        <img src="/icons/search.svg" alt="Lupa">
+                    </a>
+                    <a href="/log-in" class="main-header__icon">
+                        <img src="/icons/user-2.svg" alt="User">
                     </a>
 
+                    <!-- <a 
+                        href="/cart" 
+                        class="m-h__icon m-h__icon--cart" 
+                        aria-label="Carrito de compras"
+                    >
+                        <img src="/icons/shopping-cart.svg" alt="Carrito de compra">
+                        <span class="m-h__cart-badge"
+                            >2</span
+                        >
+                    </a> -->
+
+                    <a 
+                        href="/cart" 
+                        class="button button--ghost button--xl-icon main-header__icon--cart" 
+                        aria-label="Carrito de compras"
+                    >
+                        <img src="/icons/shopping-cart.svg" alt="Carrito de compra">
+                        <span class="main-header__cart-badge"
+                            >2</span
+                        >
+                    </a>
                 </div>
-    
-            </div>
-        </div>
-        <div class="container main-header--hidden">
 
-            <div class="main-header main-header--centrado">
-                <nav class="main-nav main-nav--hidden">
-                    <div class="main-nav__list">
-                        
-                        <!-- Aqui se pondra ruta node ejs categories/id de categoria, categories/1 -->
-                        <a href="/categories/1" class="nav-item">Polos</a>
-        
-                        <a href="/categories/2" class="nav-item">Tazas</a>
-        
-                        <a href="/categories/3" class="nav-item">Sticker</a>
-        
-                    </div>
+                <div class="main-header__separator"></div>
+
+                <nav class="main-nav" aria-label="Navegación principal" >
+                    
+                    <ul class="main-nav__list" role="menubar">
+                        <li role="none">
+                            <a href="/categories/1" role="menuitem" class="nav-item">Polos</a>
+                        </li>
+                        <li role="none">
+                            <a href="/categories/2" role="menuitem" class="nav-item">Tazas</a>
+                        </li>
+                        <li role="none">
+                            <a href="/categories/3" role="menuitem" class="nav-item">Stickers</a>
+                        </li>
+                    </ul>
                 </nav>
-            </div>
-        </div>
-        
 
-    </header>
-  </body>
-</html>
+            </div>
+            
+        </header>
+
+

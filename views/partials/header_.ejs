@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <header class="header">
+
+        <div class="header__topbar">
+            <div class="header__topbar-wrapper container">
+                <div class="header__auth-links">
+                    <a href="/log-in" class="header__auth-link">Iniciar sesión</a>
+                    <a href="/sign-up" class="header__auth-link">Crear una cuenta</a>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="container">
+
+            <div class="main-header">
+                <a class="main-header__logo" href="/">
+                    <img src="/logos/logo_fullstack.svg" alt="FullStack inicio">
+                </a>
+    
+                <nav class="main-nav" aria-label="Navegación principal" >
+                    <div class="main-nav__list">
+                        
+                        <!-- Aqui se pondra ruta node ejs categories/id de categoria, categories/1 -->
+                        <a href="/categories/1" class="nav-item">Polos</a>
+    
+                        <a href="/categories/2" class="nav-item">Tazas</a>
+    
+                        <a href="/categories/3" class="nav-item">Sticker</a>
+    
+                    </div>
+                </nav>
+                <nav class="m-n" aria-label="Navegación principal" >
+                   
+                    <ul class="m-n__list" role="menubar">
+                        <li class="m-n__item" role="none">
+                            <a href="/categories/1" role="menuitem" class="m-n__link">POLS</a>
+                        </li>
+                        <li class="m-n__item" role="none">
+                            <a href="/categories/2" role="menuitem" class="m-n__link">TA</a>
+                        </li>
+                        <li class="m-n__item" role="none">
+                            <a href="/categories/3" role="menuitem" class="m-n__link">STICKES</a>
+                        </li>
+                    </ul>
+                </nav>
+                
+    
+                <div class="main-header__icons">
+
+                    <div class="main-header__icons-group main-header__icons-group--hidden">
+                        <a href="#" class="main-header__icon">
+                            <img src="/icons/search.svg" alt="Lupa">
+                        </a>
+                        <a href="/log-in" class="main-header__icon">
+                            <img src="/icons/user-2.svg" alt="User">
+                        </a>
+                    </div>
+
+                    <a 
+                        href="/cart" 
+                        class="main-header__icon main-header__icon--ultimo" 
+                        aria-label="Carrito de compras"
+                    >
+                        <img src="/icons/shopping-cart.svg" alt="Carrito de compra">
+                        <!-- <span class="header-actions__cart-badge"
+                            ><%= countCartProducts %></span
+                        > -->
+                    </a>
+
+                </div>
+    
+            </div>
+        </div>
+        <div class="container main-header--hidden">
+
+            <div class="main-header main-header--centrado">
+                <nav class="main-nav main-nav--hidden">
+                    <div class="main-nav__list">
+                        
+                        <!-- Aqui se pondra ruta node ejs categories/id de categoria, categories/1 -->
+                        <a href="/categories/1" class="nav-item">Polos</a>
+        
+                        <a href="/categories/2" class="nav-item">Tazas</a>
+        
+                        <a href="/categories/3" class="nav-item">Sticker</a>
+        
+                    </div>
+                </nav>
+            </div>
+        </div>
+        
+
+    </header>
+  </body>
+</html>

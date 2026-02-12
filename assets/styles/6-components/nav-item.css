@@ -4,7 +4,14 @@
     color: var(--muted-foreground);
     font-size: var(--font-size-3-5);
     font-weight: var(--font-medium);
-    line-height: var(--leading-5);
+    display: block;
+    line-height: 20px;
     /* margin-block: 22px; */
-    margin-inline: var(--space-3);
+    padding-inline: var(--space-3);
+    padding-block: 14px;
+    transition: background-color 0.2s;
+}
+
+.nav-item:hover {
+    background-color: var(--accent-background);
 }
