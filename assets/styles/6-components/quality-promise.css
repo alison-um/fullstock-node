@@ -20,13 +20,13 @@
 
 @media (min-width: 40rem) {
     .quality-promise__items {
-        grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         justify-content: center;
     }
 }
 
 /*  Desktop  */
-@media (min-width: 64rem) {
+@media (min-width: 768px) {
     .quality-promise__items {
         grid-template-columns: repeat(4, 1fr);
     }

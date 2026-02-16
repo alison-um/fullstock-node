@@ -9,6 +9,8 @@
 
 
 import express from "express";
+import expressLayouts from "express-ejs-layouts";
+
 import {
   homeHandler,
   categoryHandler,
@@ -26,12 +28,35 @@ import {
 } from "./handlers.js";
 
 const app = express();
-const port = 3001;
+const port = 3001;                    // Iniciar Servidor
 
-app.set("view engine", "ejs");
-app.use(express.static("assets"));
-// express.urlencoded
-app.use(express.urlencoded({ extended: true }));  //A
+app.set("view engine", "ejs");        // Para trabajar con plantillas motor ejs
+app.set("views", "./views");          // ya por defecto lo busca en esa carpeta
+//A
+app.use(expressLayouts);              // Middleware para usar ejs-layouts
+app.set("layout", "layout");
+
+app.use(express.static("assets"));    // Middleware para archivos estaticos
+
+app.use(express.urlencoded({ extended: true }));  // express.urlencoded
+
+
+
+const pageTitleByPath = {
+  "/": "Inicio",
+  "/cart": "Carrito",
+  "/checkout": "Checkout",
+  "/about": "Quiénes somos",
+  "/terminos": "Términos y Condiciones",
+  "/log-in": "Iniciar sesión",
+  "/sign-up": "Registrarse"
+};
+
+app.use((req, res, next) => {
+  const currentPath = req.path;
+  res.locals.namePage = pageTitleByPath[currentPath] || "FullStock";
+  next();
+});
 
 
 // Router

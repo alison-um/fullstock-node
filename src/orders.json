@@ -1,1 +1,61 @@
-[]
+[
+  {
+    "id": "MZYKNYz3OfHQTXvgWrYRL",
+    "cliente": {
+      "email": "",
+      "nombre": "",
+      "apellido": "",
+      "compania": "",
+      "direccion": "",
+      "ciudad": "",
+      "pais": "",
+      "provincia": "",
+      "cod_postal": "",
+      "telefono": ""
+    },
+    "products": [
+      {
+        "id": 1,
+        "name": "Polo React",
+        "description": "Viste tu pasión por React con estilo y comodidad en cada línea de código.",
+        "price": 20,
+        "imagePath": "/images/polos/polo-react.png",
+        "imageDescription": "Polo gris con el logo de React"
+      },
+      {
+        "id": 1,
+        "name": "Polo React",
+        "description": "Viste tu pasión por React con estilo y comodidad en cada línea de código.",
+        "price": 20,
+        "imagePath": "/images/polos/polo-react.png",
+        "imageDescription": "Polo gris con el logo de React"
+      },
+      {
+        "id": 16,
+        "name": "Sticker de Docker",
+        "description": "Pega tu pasión por el código en cualquier superficie y deja claro cuál es tu stack favorito.",
+        "price": 10,
+        "imagePath": "/images/stickers/sticker-docker.png",
+        "imageDescription": "Sticker de VSCode"
+      }
+    ],
+    "total": 50
+  },
+  {
+    "id": "vPZS8bNHgOM6VTAriAnu1",
+    "cliente": {
+      "email": "",
+      "nombre": "",
+      "apellido": "",
+      "compania": "",
+      "direccion": "",
+      "ciudad": "",
+      "pais": "",
+      "provincia": "",
+      "cod_postal": "",
+      "telefono": ""
+    },
+    "products": [],
+    "total": 0
+  }
+]

@@ -1,84 +1,78 @@
-<%- include('partials/header'); %>
 
-<main>
-  <section class="section-sm container">
-    <div class="cart">
-      <h1 class="cart__title">
-          Carrito de compras
-      </h1>
+<section class="section-sm container">
+  <div class="cart">
+    <h1 class="cart__title">
+        Carrito de compras
+    </h1>
 
-      <div class="cart__content">
-        <!-- componente cart-item -->
-        <% cart.forEach((product) => { %>
-        <article class="cart-item border-bottom">
-          <div class="cart-item__media">
-              <img src="<%=product.imagePath%>" alt="" class="cart-item__image">
+    <div class="cart__content">
+      <!-- componente cart-item -->
+      <% cart.forEach((product) => { %>
+      <article class="cart-item border-bottom">
+        <div class="cart-item__media">
+            <img src="<%=product.imagePath%>" alt="" class="cart-item__image">
+        </div>
+        <div class="cart-item__detalles">
+          <div class="cart-item__header">
+            <p class="cart-item__producto"><%=product.name%></p>
+
+            <form 
+              action="/cart/remove/<%=product.id%>" 
+              method="post" 
+              class="cart-item__action">
+
+              <button type="submit" class="button button--outline button--sm cart-item__btnaction">
+                <div class="cart-item__btnicon">
+
+                  <img src="/icons/cart-eliminar.png" alt="" class=" ">
+                </div>
+              </button>
+            </form>
           </div>
-          <div class="cart-item__detalles">
-            <div class="cart-item__header">
-              <p class="cart-item__producto"><%=product.name%></p>
+          <div class="cart-item__content">
+            <p class="cart-item__precio">$<%=product.price%></p>
+            <div class="cart-item__actions">
 
-              <form 
-                action="/cart/remove/<%=product.id%>" 
-                method="post" 
-                class="cart-item__action">
+              <form action="" method="post" class="cart-item__action">
+                <input type="hidden" name="restarCantidad" >
 
                 <button type="submit" class="button button--outline button--sm cart-item__btnaction">
                   <div class="cart-item__btnicon">
 
-                    <img src="/icons/cart-eliminar.png" alt="" class=" ">
+                    <img src="/icons/cart-menos.png" alt="" class=" ">
                   </div>
                 </button>
               </form>
+
+              <p class="cart-item__cantidad">3</p>
+
+                      
+              <form action="" method="post" class="cart-item__action">
+                <input type="hidden" name="agregarCantidad" >
+
+                <button type="submit" class="button button--outline button--sm cart-item__btnaction">
+                  <div class="cart-item__btnicon">
+
+                    <img src="/icons/cart-mas.png" alt="" class=" ">
+                  </div>
+                </button>
+              </form>
+
             </div>
-            <div class="cart-item__content">
-              <p class="cart-item__precio">$<%=product.price%></p>
-              <div class="cart-item__actions">
-
-                <form action="" method="post" class="cart-item__action">
-                  <input type="hidden" name="restarCantidad" >
-
-                  <button type="submit" class="button button--outline button--sm cart-item__btnaction">
-                    <div class="cart-item__btnicon">
-
-                      <img src="/icons/cart-menos.png" alt="" class=" ">
-                    </div>
-                  </button>
-                </form>
-
-                <p class="cart-item__cantidad">3</p>
-
-                        
-                <form action="" method="post" class="cart-item__action">
-                  <input type="hidden" name="agregarCantidad" >
-
-                  <button type="submit" class="button button--outline button--sm cart-item__btnaction">
-                    <div class="cart-item__btnicon">
-
-                      <img src="/icons/cart-mas.png" alt="" class=" ">
-                    </div>
-                  </button>
-                </form>
-
-              </div>
-                    
-            </div>
+                  
           </div>
-        </article>
-        <% }) %>
-
-        <div class="cart__total border-bottom">
-          <span>Total</span>
-          <span>$<%=total%></span>
         </div>
-        <div class="cart__button">
-          <a href="/checkout" class="button button--primary button--xl button--carrito">Continuar Compra</a>
-        </div>
+      </article>
+      <% }) %>
 
+      <div class="cart__total border-bottom">
+        <span>Total</span>
+        <span>$<%=total%></span>
       </div>
+      <div class="cart__button">
+        <a href="/checkout" class="button button--primary button--xl button--carrito">Continuar Compra</a>
+      </div>
+
     </div>
-  </section>
-</main>
-
-
-<%- include('partials/footer'); %>
+  </div>
+</section>

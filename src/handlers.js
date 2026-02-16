@@ -13,7 +13,12 @@ export async function categoryHandler(req, res) {
 
   const category = categories.find((c) => c.id === categoryId);
   const products = category.products;
-  res.render("category", { category, products });
+  res.render("category", 
+    { category, 
+      products, 
+      namePage: category.name 
+    },
+  );
 }
 
 export async function productHandler(req, res) {
@@ -24,7 +29,11 @@ export async function productHandler(req, res) {
     product = category.products.find((p) => p.id === productId);
     if (product) break;
   }
-  res.render("product", { product });
+  res.render("product", 
+    { product,
+      namePage: product.name 
+    }
+  );
 }
 
 export async function addProductHandler(req, res) {
@@ -122,7 +131,11 @@ export async function orderConfirmationHandler (req, res) {
     }
   }
 
-  res.render("order-confirmation", {order});
+  res.render("order-confirmation", 
+    {order,
+      namePage: "Confirmación de compra"
+    }
+  );
 
 }
 

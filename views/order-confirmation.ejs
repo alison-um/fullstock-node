@@ -1,32 +1,27 @@
-<%- include('partials/header'); %>
 
-<main>
-  <section class="confirmation section-sm container">
+<section class="confirmation section-sm container">
 
-    <div class="confirmation__group">
+  <div class="confirmation__group">
 
-      <p class="confirmation__pre-title">
-        ¡Muchas gracias por tu compra!
-      </p>
-      <h1 class="confirmation__title">
-        Tu orden está en camino
-      </h1>
-      <p class="confirmation__description">
-        Llegaremos a la puerta de tu domicilio lo antes posible
-      </p>
+    <p class="confirmation__pre-title">
+      ¡Muchas gracias por tu compra!
+    </p>
+    <h1 class="confirmation__title">
+      Tu orden está en camino
+    </h1>
+    <p class="confirmation__description">
+      Llegaremos a la puerta de tu domicilio lo antes posible
+    </p>
 
-    </div>
+  </div>
 
-    <div class="confirmation__group">
-      <span class="confirmation__control-label">
-        Código de seguimiento
-      </span>
-      <strong class="confirmation__control-id">
-        <%= order.id %>
-      </strong>
-    </div>
+  <div class="confirmation__group">
+    <span class="confirmation__control-label">
+      Código de seguimiento
+    </span>
+    <strong class="confirmation__control-id">
+      <%= order.id %>
+    </strong>
+  </div>
 
-  </section>
-</main>
-
-<%- include('partials/footer'); %>
+</section>
