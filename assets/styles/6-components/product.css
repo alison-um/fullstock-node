@@ -3,6 +3,7 @@
     text-decoration: none;
     /* max-width: 448px; */
     max-width: var(--width-md);
+    width: 100%;
 
     border-radius: var(--rounded-xl);
     border: 1px solid hsla(240, 10%, 86%, 1);

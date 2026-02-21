@@ -4,7 +4,7 @@
 
 .products__info {
     /* margin: 64px 0 40px 0; */
-    padding-bottom: var(--space-10);
+    padding-block: var(--space-10);
     max-width: var(--width--3xl);
 }
 
@@ -35,8 +35,12 @@
     gap: var(--space-8);/*32px*/
 }
 
+
 /*      Desktop 3 columnas de 15rem mín --- */
 @media (min-width: 64rem) {
+    .products__info {
+        padding-block: var(--space-12);
+    }
     .products__content {
         flex-wrap: nowrap;
         /* margin-block: 32px 64px; */

@@ -1,134 +1,269 @@
-import { getCategories, getCart, saveCart, getOrders, saveOrders } from "./utils.js";
+import { getData, getCart, saveData, getOrders, saveOrders } from "./utils/utils.js";
 import { nanoid } from "nanoid";
 
 export async function homeHandler(_req, res) {
-  const categories = await getCategories();
+  const data = await getData();
+  const categories = data.categories;
   res.render("index", { categories });
 }
 
 // Trabaja con view: category.ejs
 export async function categoryHandler(req, res) {
-  const categories = await getCategories();
-  const categoryId = Number(req.params.id);       
-
-  const category = categories.find((c) => c.id === categoryId);
-  const products = category.products;
+  const { slug } = req.params;
+  
+  const data = await getData();
+  const {categories , products } = data;
+  
+  const categoryFind = categories.find(
+    (category) => category.slug.toLowerCase() === slug.toLowerCase()
+  );
+  
+  const productsFilter = products.filter(
+    (product)  => product.categoryId === categoryFind.id
+  );
   res.render("category", 
-    { category, 
-      products, 
-      namePage: category.name 
+    { category: categoryFind, 
+      products: productsFilter, 
+      namePage: categoryFind.name 
     },
   );
 }
 
 export async function productHandler(req, res) {
-  const categories = await getCategories();
-  const productId = Number(req.params.id);
-  let product = null;
-  for (const category of categories) {
-    product = category.products.find((p) => p.id === productId);
-    if (product) break;
-  }
+  const  productId  = parseInt(req.params.id);
+
+  const data = await getData();
+  const {products } = data;
+
+  const productFinded = products.find (
+    (product) => product.id === productId
+  );
+  
   res.render("product", 
-    { product,
-      namePage: product.name 
+    { product: productFinded,
+      namePage: productFinded.name 
     }
   );
 }
 
 export async function addProductHandler(req, res) {
-  const cart = await getCart();   
-  const categories = await getCategories(); 
-  const productId = Number(req.params.id); 
-  let product = null;
-  for (const category of categories) {
-   
-    product = category.products.find((p) => p.id === productId);
-   
-    if (product) break;
+  const {productId} = req.body;
+
+  const data = await getData();
+  const {products, carts} = data;
+  
+  // Buscamos el producto que el usuario agrego al carrito en objeto de products
+  const productFinded = products.find (
+    (product) => product.id === parseInt(productId),
+  );
+  if (!productFinded) {
+    throw new AppError(     //CORREGIR!!
+      "El producto seleccionado no se encuentra disponible",
+      404,
+    );
   }
-  cart.push(product);     
-  saveCart(cart);        
-  res.redirect(303, "/");   
+
+  const cart = carts[0] || {id: 1, items: []};
+
+  // Buscamos el producto que el usuario agrego al carrito en objeto de cart.items
+  const cartItem = cart.items.find(
+    (item) => item.productId === parseInt(productId),
+  );
+
+  if (cartItem) {
+    cartItem.quantity += 1;
+  } else {
+    cart.items.push({ 
+      productId: parseInt(productId), 
+      quantity: 1 
+    });
+  }
+
+  // Guardar el carrito en mi objeto de carts
+  data.carts[0] = cart;
+  
+  await saveData(data);        
+  res.redirect(`/products/${productId}`); 
 }
 
 export async function cartHandler(_req, res) {
   
-  const cart = await getCart();
-  const total = cart.reduce((accumulator, product) => {
-    return accumulator + product.price;
-  }, 0);
-  res.render("cart", { cart, total });
+  const data = await getData();
+  const {products, carts} = data;
+
+  const cart = carts[0] || {id: 1, items: []};
+
+  // if (!cart) {  
+  //   return res.render("cart", {
+  //     cartItems: [],
+  //     total: 0,
+  //   });
+  // }
+  
+  const cartItems = cart.items.map(
+    (item) => {
+      const product = products.find(
+        (product) => product.id === item.productId
+      );
+
+      const subtotal = product.price * item.quantity; //en centavos
+
+      return {
+        ...item,
+        product,
+        subtotal,
+      };
+
+    });
+
+    const total = cartItems.reduce((accumulator, item) => {
+    return accumulator + item.subtotal;
+    }, 0);
+
+  res.render("cart", { cartItems, total });
 
 }
 
 
-
+// app.post("/cart/update-item", updateProductCartHandler);
+// app.post("/cart/remove-item", removeProductCartHandler);
 // A
+export async function updateProductCartHandler(req, res) {
+  const {productId, quantity} = req.body;
 
-export async function removeProductCartHandler(req, res) {
-  const cart = await getCart();
-  const productId = Number(req.params.id);
+  const data = await getData();
+  const {carts} = data;
+  const cart = carts[0] || { id: 1, items: [] };
 
-  const updatedCart = cart.filter(
-    (product) => product.id !== productId
+  const cartItem = cart.items.find(
+    (product) => product.productId === parseInt(productId),
   );
 
-  await saveCart(updatedCart);
-  res.redirect("/cart");
+  if (cartItem) {
+    cartItem.quantity = parseInt(quantity);
+  }
+
+  data.carts[0] = cart;
+
+  await saveData(data);  
+  res.redirect("/cart"); 
+}
+
+
+export async function deleteProductCartHandler(req, res) {
+  const {productId} = req.body;
+
+  const data = await getData();
+  const {carts} = data;
+  const cart = carts[0] || { id: 1, items: [] };
+
+  cart.items = cart.items.filter (
+    (item) => item.productId !== parseInt(productId),
+  );
+
+  data.carts[0] = cart;
+
+  await saveData(data);  
+  res.redirect("/cart"); 
 }
 
 
 export async function checkoutHandler(_req, res) {
+  const data = await getData();
+  const {products, carts} = data;
+
+  const cart = carts[0] || {id: 1, items: []};
+
+  if(!cart || cart.items.length === 0) {
+    return res.redirect("/");
+  }
   
-  const cart = await getCart();
-  const total = cart.reduce((acc, product) => {
-    return acc + product.price;
+  const cartItems = cart.items.map(
+    (item) => {
+      const product = products.find(
+        (product) => product.id === item.productId
+      );
+
+      const subtotal = product.price * item.quantity; //en centavos
+
+      return {
+        ...item,
+        product,
+        subtotal,
+      };
+
+    }
+  );
+
+  const total = cartItems.reduce((accumulator, item) => {
+  return accumulator + item.subtotal;
   }, 0);
-  res.render("checkout", { cart, total });
+
+  res.render("checkout", { cartItems, total });
+
 }
 
 
-export async function checkoutPostHandler(req, res) {
+export async function placeOrderHandler(req, res) {
 
+  const data = await getData();
+  const {products, carts, orders} = data;
   
-  const cart = await getCart();
-  
-  const total = cart.reduce((acc, product) => {
-    return acc + product.price;
-  }, 0);
+  const cart = carts[0];
 
-  
-  const orderId = nanoid();
-  
+  if(!cart || cart.items.length === 0) {
+    return res.redirect("/");
+  }
+
+  let total=0;
+
+  const itemsOrder = cart.items.map (item => {
+    const product = products.find(prod => prod.id === item.productId);
+    const subtotal = product.price * item.quantity;
+    total += subtotal;
+    return {
+      productId: product.id,
+      name: product.name,
+      price: product.price,
+      imgSrc: product.imagePath,
+      quantity: item.quantity
+    }
+  }
+  );
+
+  const newId = orders.length>0 
+    ? Math.max(...orders.map((order) => order.id)) + 1
+    : 1;
+
+//     Caso contrario, extraiga todos los id de los elementos usando map y los guarde en una variable ids.
+// Calcule el máximo con Math.max(...ids), y retorne ese valor + 1.
   const newOrder = {
-    id: orderId,
-    cliente: req.body,
-    products: cart,
-    total
+    id: newId,
+    items: itemsOrder,
+    shippingInfo: req.body, 
+    total: total,
+    status: "pending",
+    createdAt: new Date().toISOString()
   };
-
-  const orders = await getOrders();
-  orders.push(newOrder);
-  await saveOrders(orders);
-
-  
-  await saveCart([]);
  
-  res.redirect(303, `/order-confirmation/${orderId}`);
+  orders.push(newOrder);
+  
+  data.carts = [];
+  
+  await saveData(data);        
+ 
+  res.redirect(303, `/order-confirmation?orderId=${newId}`);
 }
 
 export async function orderConfirmationHandler (req, res) {
-  const orders = await getOrders();
-  const orderId = req.params.id;
+  const data = await getData();
+  const { orders } = data;
+  const orderId = parseInt(req.query.orderId);
+  
+  const order= orders.find (order => order.id === orderId);
 
-  let order = null;
-
-  for (const o of orders) {
-    if (o.id === orderId) {
-      order = o;
-      break;
-    }
+  if (!order) {
+    return res.redirect("/");
   }
 
   res.render("order-confirmation", 

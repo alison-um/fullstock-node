@@ -10,22 +10,24 @@
             </h2>
             <div class="checkout__list">
                 <!-- componente summary-item -->
-                <% cart.forEach((product) => { %>
+                <% cartItems.forEach((item) => { %>
                 <article class="summary-item border-bottom">
                     <div class="summary-item__media">
-                        <img src="<%=product.imagePath%>" alt="" class="summary-item__image">
+                        <img src="<%=item.product.imagePath%>" alt="" class="summary-item__image">
                     </div>
                     <div class="summary-item__detalles">
                         <div class="summary-item__header">
-                            <p class="summary-item__producto"><%=product.name%></p>
+                            <p class="summary-item__producto"><%=item.product.name%></p>
     
                         </div>
                         <div class="summary-item__content">
-                            <p class="summary-item__label">3</p>
-                            <div class="summary-item__btnicon">
-                                <img src="/icons/x.jpg" alt="Indicador para cantidad por producto">
-                            </div>
-                            <p class="summary-item__label"><%=product.price%></p>
+                            <!-- <p class="cart-item__precio">SubTotal: S/ <%= (item.subtotal /100).toFixed(2) %></p> -->
+                            <p class="summary-item__label"><%=item.quantity%></p>
+                            
+                            <img src="/icons/x.svg" alt="Indicador para cantidad por producto"
+                                class="summary-item__btnicon">
+                            
+                            <p class="summary-item__label">S/ <%=(item.product.price / 100).toFixed(2)%></p>
                         </div>
                     </div>
                 </article>
@@ -34,7 +36,7 @@
     
                 <div class="checkout__total">
                     <span>Total</span>
-                    <span>$<%=total%></span>
+                    <span>S/ <%= (total / 100).toFixed(2) %></span>
                 </div>
                 
             </div>
@@ -43,7 +45,7 @@
         <!-- componente: checkout-form -->
         <section class="checkout-form">
     
-            <form action="" method="post" class="checkout-form__group">
+            <form action="/checkout/place-order" method="post" class="checkout-form__group">
     
                 <fieldset class="checkout-form__contacto border-bottom">
                     <legend class="checkout-form__subtitle">Información de contacto</legend>
@@ -51,7 +53,14 @@
                     <!-- componente:  form-field -->
                     <div class="form-field">
                         <label for="email" class="label">Correo electrónico</label>
-                        <input type="email" id="email" name="email" class="input input--checkout">
+                        <input 
+                            type="email"
+                            id="email" 
+                            name="email" 
+                            autocomplete="email"
+                            required
+                            class="input input--checkout"
+                        >
                     </div>
                 </fieldset>
     
@@ -62,37 +71,94 @@
     
                         <div class="checkout-form__row">  <!--Nombre y Ape-->
                             <div class="form-field">
-                                <label for="nombre" class="label">Nombre</label>
-                                <input type="text" id="nombre" name="nombre" class="input input--checkout">
+                                <label for="firstName" class="label">Nombre</label>
+                                <input 
+                                    type="text" 
+                                    id="firstName" 
+                                    name="firstName" 
+                                    autocomplete="given-name"
+                                    required
+                                    class="input input--checkout"
+                                >
                             </div>
                             <div class="form-field">
-                                <label for="apellido" class="label">Apellido</label>
-                                <input type="text" id="apellido" name="apellido" class="input input--checkout">
+                                <label for="lastName" class="label">Apellido</label>
+                                <input 
+                                    type="text" 
+                                    id="lastName" 
+                                    name="lastName" 
+                                    autocomplete="family-name"
+                                    required
+                                    class="input input--checkout"
+                                >
                             </div>
                         </div>
     
                         <div class="form-field">
-                            <label for="compania" class="label">Compañía</label>
-                            <input type="text" id="compania" name="compania" class="input input--checkout">
+                            <label for="company" class="label">Compañía</label>
+                            <input 
+                                type="text" 
+                                id="company" 
+                                name="company" 
+                                autocomplete="organization" 
+                                class="input input--checkout"
+                            >
                         </div>
     
                         <div class="form-field">
-                            <label for="direccion" class="label">Dirección</label>
-                            <input type="text" id="direccion" name="direccion" class="input input--checkout">
+                            <label for="address" class="label">Dirección</label>
+                            <input 
+                                type="text" 
+                                id="address" 
+                                name="address" 
+                                autocomplete="street-address"
+                                class="input input--checkout"
+                            >
                         </div>
     
                         <div class="checkout-form__row">  <!--Ciudad Pais-->
     
                             <div class="form-field">
-                                <label for="ciudad" class="label">Ciudad</label>
-                                <input type="text" id="ciudad" name="ciudad" class="input input--checkout">
+                                <label for="city" class="label">Ciudad</label>
+                                <input 
+                                    type="text" 
+                                    id="city"
+                                    name="city"
+                                    autocomplete="address-level2"
+                                    required 
+                                    class="input input--checkout"
+                                >
                             </div>
                             <div class="form-field">
-                                <label for="pais" class="label">País</label>
+                                <label for="country" class="label">País</label>
                                 <!-- componente: select -->
-                                <select id="pais" name="pais" class="select select--checkout">
-                                    <option value="">Select</option>
-                                    <option value="peru">Perú</option>
+                                <select 
+                                    id="country"
+                                    name="country"
+                                    autocomplete="country" 
+                                    required
+                                    class="select select--checkout"
+                                >
+                                    <option value="">Seleccionar país</option>
+                                    <option value="AR">Argentina</option>
+                                    <option value="BO">Bolivia</option>
+                                    <option value="CL">Chile</option>
+                                    <option value="CO">Colombia</option>
+                                    <option value="CR">Costa Rica</option>
+                                    <option value="CU">Cuba</option>
+                                    <option value="DO">República Dominicana</option>
+                                    <option value="EC">Ecuador</option>
+                                    <option value="SV">El Salvador</option>
+                                    <option value="GT">Guatemala</option>
+                                    <option value="HN">Honduras</option>
+                                    <option value="MX">México</option>
+                                    <option value="NI">Nicaragua</option>
+                                    <option value="PA">Panamá</option>
+                                    <option value="PY">Paraguay</option>
+                                    <option value="PE">Perú</option>
+                                    <option value="PR">Puerto Rico</option>
+                                    <option value="UY">Uruguay</option>
+                                    <option value="VE">Venezuela</option>
                                 </select>
                             </div>
                         </div>  
@@ -100,19 +166,40 @@
                         <div class="checkout-form__row">  <!--Prov CodigoP-->
     
                             <div class="form-field">
-                                <label for="provincia" class="label">Provincia/Estado</label>
-                                <input type="text" id="provincia" name="provincia" class="input input--checkout">
+                                <label for="region" class="label">Provincia/Estado</label>
+                                <input 
+                                    type="text" 
+                                    id="region" 
+                                    name="region" 
+                                    autocomplete="address-level1"
+                                    required 
+                                    class="input input--checkout"
+                                >
                             </div>
                             <div class="form-field">
-                                <label for="cod_postal" class="label">Código postal</label>
-                                <input type="text" id="cod_postal" name="cod_postal" class="input input--checkout">
+                                <label for="zipCode" class="label">Código postal</label>
+                                <input 
+                                    type="text" 
+                                    id="zipCode" 
+                                    name="zipCode" 
+                                    autocomplete="postal-code"
+                                    required
+                                    class="input input--checkout"
+                                >
                             </div>
     
                         </div> 
                         
                         <div class="form-field">
-                            <label for="telefono" class="label">Teléfono</label>
-                            <input type="text" id="telefono" name="telefono" class="input input--checkout">
+                            <label for="phone" class="label">Teléfono</label>
+                            <input 
+                                type="text" 
+                                id="phone" 
+                                name="phone" 
+                                autocomplete="tel" 
+                                required
+                                class="input input--checkout"
+                            >
                         </div>
                     </div>
     

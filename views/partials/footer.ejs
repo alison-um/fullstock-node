@@ -7,9 +7,9 @@
                 <div class="links-group">
                     <h5 class="links-group__title">Tienda</h5>
                     <ul>
-                        <li class="links-group__link"><a href="/categories/1">Polos</a></li>
-                        <li class="links-group__link"><a  href="/categories/2">Tazas</a></li>
-                        <li class="links-group__link"><a href="/categories/3">Stickers</a></li>
+                        <li class="links-group__link"><a href="/categories/polos">Polos</a></li>
+                        <li class="links-group__link"><a  href="/categories/tazas">Tazas</a></li>
+                        <li class="links-group__link"><a href="/categories/stickers">Stickers</a></li>
                     </ul>
                 </div>
                 <div class="links-group">
@@ -40,9 +40,17 @@
                 </h5>
                 <p class="newsletter-form__description">Recibe las últimas ofertas y descuentos en tu correo semanalmente.</p>
 
-                <form action="/subscribe" method="POST" class="newsletter-form__form">
+                <form action="" method="POST" class="newsletter-form__form">
                     <!--    componente segun figma: input -->
-                    <input class="input input--expanded" name="email" type="email" placeholder="correo@dominio.com" required>
+                    <input 
+                        type="email"
+                        id="email" 
+                        name="email" 
+                        autocomplete="email"
+                        placeholder="correo@dominio.com"
+                        required
+                        class="input input--expanded"
+                    >
                     <!--    componente segun figma: button button--secondary button--lg -->
                     <!-- boton estatico solo visuaal -->
                     <button class="button button--secondary button--lg" type="submit">Suscribirse

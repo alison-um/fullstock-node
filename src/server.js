@@ -17,9 +17,10 @@ import {
   productHandler,
   addProductHandler,
   cartHandler,
-  removeProductCartHandler,  //A
+  updateProductCartHandler,  //A
+  deleteProductCartHandler,  
   checkoutHandler,
-  checkoutPostHandler,
+  placeOrderHandler,
   orderConfirmationHandler,
   aboutHandler,
   termsHandler,
@@ -61,16 +62,17 @@ app.use((req, res, next) => {
 
 // Router
 app.get("/", homeHandler);
-app.get("/categories/:id", categoryHandler);
+app.get("/categories/:slug", categoryHandler);
 app.get("/products/:id", productHandler);
-app.post("/cart/add/:id", addProductHandler);
+app.post("/cart/add-product", addProductHandler);
 app.get("/cart", cartHandler);
 
 //A: 
-app.post("/cart/remove/:id", removeProductCartHandler);
+app.post("/cart/update-item", updateProductCartHandler);
+app.post("/cart/delete-item", deleteProductCartHandler);
 app.get("/checkout", checkoutHandler);
-app.post("/checkout", checkoutPostHandler);
-app.get("/order-confirmation/:id", orderConfirmationHandler);
+app.post("/checkout/place-order", placeOrderHandler);
+app.get("/order-confirmation", orderConfirmationHandler);
 app.get("/about", aboutHandler);
 app.get("/terminos", termsHandler);
 app.get("/log-in", loginHandler);

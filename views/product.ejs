@@ -2,23 +2,25 @@
 <section class="section-sm container">
   <div class="product-detail">
     <div class="product-detail__media">
-      <img src="<%=product.imagePath%>" 
-        alt="<%=product.imageDescription%>" 
+      <img 
+        src="<%=product.imagePath%>" 
+        alt="<%=product.name%>" 
         class="product-detail__image"
       />
     </div>
 
     <div class="product-detail__info">
       <h1 class="product-detail__title"><%=product.name%></h1>
-      <span class="product-detail__price"><%=product.price%></span>
+      <p class="product-detail__price">S/ <%= (product.price / 100).toFixed(2) %></p>
       <p class="product-detail__description"><%=product.description%></p>
       
       <form 
-        action="/cart/add/<%=product.id%>" 
+        action="/cart/add-product" 
         method="post" 
         class="product-detail__button"
         >
-        <input type="hidden" name="productId" >
+        <input type="hidden" name="productId" value="<%= product.id %>">
+
         <button type="submit" class="button button--primary button--xl button--carrito">
           Agregar al carrito
         </button>

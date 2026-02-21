@@ -1,30 +1,26 @@
 /* styles/6-components/button.css */
 
 .button {
-    text-decoration: none;
+  text-decoration: none;
 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--rounded-lg);      /**/
-    
-    gap: var(--space-2); /* 8px */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--rounded-lg);      /**/
+  
+  gap: var(--space-2); /* 8px */
 
-    height: var(--space-8); /* 32px */
-    
-    padding-inline: var(--space-2-5);
-    padding-block: var(--space-1-5);
+  height: var(--space-8); /* 32px */
+  
+  padding-inline: var(--space-2-5);
+  padding-block: var(--space-1-5);
 
-    /* centrado */
+  /* centrado */
 
-    font-size: var(--font-size-3-5);    /*14px*/
-    line-height: var(--leading-5);    /*20px*/
-    font-weight: var(--font-medium);
-
-    /* border: none; */
-    
-    /* box-shadow: 0px 1px 2px 0px hsla(0, 0%, 0%, 0.05); */
-    
+  font-size: var(--font-size-3-5);    /*14px*/
+  line-height: var(--leading-5);    /*20px*/
+  font-weight: var(--font-medium);
+  white-space: nowrap;
 }
 
 .button:disabled {
@@ -40,99 +36,100 @@
 } */
 
 .button:hover{
-    /*duracion de 150: */
-    transition: background-color 150ms ease-out;
+  /*duracion de 150: */
+  transition: background-color 150ms ease-out;
 }
 
 .button--primary {
-    background-color: var(--primary-background);
-    color: var(--primary-foreground);
+  background-color: var(--primary-background);
+  color: var(--primary-foreground);
 }
 
 .button--primary:hover {
-    background-color: var(--primary-background-hover);
+  background-color: var(--primary-background-hover);
 }
 
 .button--primary:focus {
-    box-shadow: 
-        0 0 0 2px var(--white), 
-        0 0 0 4px hsla(242, 50%, 55%, 1);
+  box-shadow: 
+      0 0 0 2px var(--white), 
+      0 0 0 4px hsla(242, 50%, 55%, 1);
 }
 
 .button--secondary {
-    background-color: var(--secondary-background);
-    color: var(--secondary-foreground);
-    /* border: none; */
+  background-color: var(--secondary-background);
+  color: var(--secondary-foreground);
+  /* border: none; */
 }
 
 .button--secondary:hover {
-    background-color: var(--secondary-background-hover);
+  background-color: var(--secondary-background-hover);
 }
 
 .button--secondary:focus {
-    box-shadow: 
-        0 0 0 2px var(--secondary-background), 
-        0 0 0 4px hsla(242, 50%, 55%, 1);
+  box-shadow: 
+      0 0 0 2px var(--secondary-background), 
+      0 0 0 4px hsla(242, 50%, 55%, 1);
 }
 
 .button--outline {
-    background-color: var(--background);
-    color: var(--muted-foreground);
-    border: 1px solid var(--border);
+  background-color: var(--background);
+  color: var(--muted-foreground);
+  border: 1px solid var(--border);
 }
 .button--outline:hover {
-    background-color: var(--muted-background);
+  background-color: var(--muted-background);
 }
 .button--outline:focus {
-    box-shadow: 
-        0 0 0 2px var(--secondary-background), 
-        0 0 0 4px hsla(242, 50%, 55%, 1);
+  box-shadow: 
+      0 0 0 2px var(--secondary-background), 
+      0 0 0 4px hsla(242, 50%, 55%, 1);
 }
 
 .button--ghost {
-    color: var(--muted-foreground);
-    background-color: transparent;
+  color: var(--muted-foreground);
+  background-color: transparent;
 }
 .button--ghost:hover {
   background-color: var(--muted-background);
 }
 .button--ghost:focus {
-    box-shadow: 
-        0 0 0 2px transparent, 
-        0 0 0 4px hsla(242, 50%, 55%, 1);
+  box-shadow: 
+      0 0 0 2px hsla(242, 50%, 55%, 1);
+  border-radius: var(--rounded-xl);
+
 }
 
 .button--sm {
-    height: var(--space-6);
+  height: var(--space-6);
 
-    padding-inline: var(--space-2);
-    padding-block: var(--space-1);  /* 4px */
+  padding-inline: var(--space-2);
+  padding-block: var(--space-1);  /* 4px */
 
-    border-radius: var(--rounded-md);
+  border-radius: var(--rounded-md);
 
-    font-size: var(--font-size-3);    /*12px*/
-    line-height: var(--leading-4);    /*16px*/
+  font-size: var(--font-size-3);    /*12px*/
+  line-height: var(--leading-4);    /*16px*/
 }
 
 .button--lg {
-    height: var(--space-10); /* 40px */
+  height: var(--space-10); /* 40px */
 
-    padding-inline: var(--space-3-5); /* 14px */
-    padding-block: var(--space-2-5);  /* 10px */
+  padding-inline: var(--space-3-5); /* 14px */
+  padding-block: var(--space-2-5);  /* 10px */
 
-    font-size: var(--font-size-3-5);    /*14px*/
-    line-height: var(--leading-5);    /*20px*/
+  font-size: var(--font-size-3-5);    /*14px*/
+  line-height: var(--leading-5);    /*20px*/
 
 }
 
 .button--xl {
-    height: var(--space-12);  /*48px*/
+  height: var(--space-12);  /*48px*/
 
-    padding-inline: var(--space-8); /* 32px */
-    padding-block: var(--space-3);  /* 12px */
+  padding-inline: var(--space-8); /* 32px */
+  padding-block: var(--space-3);  /* 12px */
 
-    font-size: var(--font-size-4);    /*16px*/
-    line-height: var(--leading-6);    /*24px*/
+  font-size: var(--font-size-4);    /*16px*/
+  line-height: var(--leading-6);    /*24px*/
 
 }
 /* .button--xl svg {
@@ -141,10 +138,10 @@
 } */
 
 .button--sm-icon {
-    width: 1.75rem;
-    height: 1.75rem;
-    padding: 0.25rem;
-    cursor: pointer;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0.25rem;
+  cursor: pointer;
 }
 .button--sm-icon svg {
   width: 1.25rem;
@@ -189,6 +186,6 @@
 
 /* PAGINA DE DETALLES PRODUCTO / SIGNUP LOGIN */
 .button--carrito , .button--auth{
-    width: 100%;
-    /* max-width: 320px; */
+  width: 100%;
+  /* max-width: 320px; */
 }
