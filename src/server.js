@@ -81,3 +81,11 @@ app.get("/sign-up", signupHandler);
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
 });
+
+
+//FALTA: 
+
+// ERROR PAG 404
+// CARRITO DINAMICO (num de products en carrito)
+// funciones en UTILS
+// css: header separator al hacer hover no se nota 

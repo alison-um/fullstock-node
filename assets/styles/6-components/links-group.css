@@ -1,6 +1,7 @@
 
 .links-group {
-    min-width: 160px;    /*160px*/
+    flex: 1;
+    flex-basis: 160px;    /*160px*/
 }
 .links-group__title {
     margin-bottom: var(--space-6);

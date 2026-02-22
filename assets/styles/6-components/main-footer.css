@@ -13,8 +13,9 @@
 .main-footer__links-groups { 
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: var(--space-4);
+    /* justify-content: space-between; */
+    gap: 16px 32px ;
+    flex-grow: 1;
 }
 
 
@@ -40,9 +41,10 @@
 
 @media (min-width: 40rem){
     .main-footer__links-groups {
+        flex-direction: row;
         /* En tablet forzamos una sola fila horizontal */
-        flex-wrap: nowrap;
-        justify-content: space-between;
+        /* flex-wrap: nowrap;
+        justify-content: space-between; */
     }
 }
 @media (min-width: 64rem) {
@@ -51,8 +53,8 @@
         flex-wrap: nowrap;
         justify-content: space-between; 
     }
-    .main-footer__links-groups {
+    /* .main-footer__links-groups {
         max-width: 736px;
         width: 100%;
-    }
+    } */
 }

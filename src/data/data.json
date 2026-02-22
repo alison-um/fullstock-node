@@ -349,62 +349,6 @@
       ]
     }
   ],
-  "carts": [
-    {
-      "id": 1,
-      "items": [
-        {
-          "productId": 22,
-          "quantity": 2
-        },
-        {
-          "productId": 13,
-          "quantity": 3
-        }
-      ]
-    }
-  ],
-  "orders": [
-    {
-      "id": 1,
-      "items": [
-        {
-          "productId": 20,
-          "name": "Taza Git",
-          "price": 1299,
-          "imgSrc": "/images/tazas/taza-git.png",
-          "quantity": 4
-        },
-        {
-          "productId": 9,
-          "name": "Polo It Works On My Machine",
-          "price": 1500,
-          "imgSrc": "/images/polos/polo-works.png",
-          "quantity": 3
-        },
-        {
-          "productId": 13,
-          "name": "Sticker Docker",
-          "price": 299,
-          "imgSrc": "/images/stickers/sticker-docker.png",
-          "quantity": 4
-        }
-      ],
-      "shippingInfo": {
-        "email": "correo@gmail.com",
-        "firstName": "NombreCline",
-        "lastName": "Apele",
-        "company": "companyy",
-        "address": "direccion",
-        "city": "citytt",
-        "country": "CO",
-        "region": "provinici",
-        "zipCode": "cod pstal",
-        "phone": "123"
-      },
-      "total": 10892,
-      "status": "pending",
-      "createdAt": "2026-02-21T03:02:08.721Z"
-    }
-  ]
+  "carts": [],
+  "orders": []
 }

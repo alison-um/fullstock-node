@@ -36,3 +36,41 @@ code {
 em {
   font-family: var(--family-emphasis);
 }
+
+/* hr {
+  border: none;
+  border-top: 1px solid var(--separator);
+} */
+/* 
+label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1em;
+} */
+
+/* input,
+select {
+  height: 2.5rem;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  background-color: var(--background);
+}
+
+fieldset {
+  all: unset;
+} */
+
+:focus-visible {
+  outline: 2px solid var(--outline);
+  outline-offset: 2px;
+}
+
+/*Account for sticky header height (3rem) + gap (2.5rem) */
+:focus {
+  scroll-margin-top: calc(3rem + 2.5rem);
+}

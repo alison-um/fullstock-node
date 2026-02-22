@@ -33,7 +33,8 @@
 .product__image {
     aspect-ratio: 3/4; /* proporcion entre ancho y alto */
     object-fit: contain;
-    margin: auto;
+    width: 100%;
+    height: 100%;
     display: block;
 }
 

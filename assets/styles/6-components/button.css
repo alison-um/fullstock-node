@@ -48,11 +48,8 @@
 .button--primary:hover {
   background-color: var(--primary-background-hover);
 }
-
-.button--primary:focus {
-  box-shadow: 
-      0 0 0 2px var(--white), 
-      0 0 0 4px hsla(242, 50%, 55%, 1);
+.button--primary:focus-visible {
+  outline: 2px solid var(--accent-7);
 }
 
 .button--secondary {
@@ -65,12 +62,6 @@
   background-color: var(--secondary-background-hover);
 }
 
-.button--secondary:focus {
-  box-shadow: 
-      0 0 0 2px var(--secondary-background), 
-      0 0 0 4px hsla(242, 50%, 55%, 1);
-}
-
 .button--outline {
   background-color: var(--background);
   color: var(--muted-foreground);
@@ -78,11 +69,6 @@
 }
 .button--outline:hover {
   background-color: var(--muted-background);
-}
-.button--outline:focus {
-  box-shadow: 
-      0 0 0 2px var(--secondary-background), 
-      0 0 0 4px hsla(242, 50%, 55%, 1);
 }
 
 .button--ghost {
@@ -92,12 +78,8 @@
 .button--ghost:hover {
   background-color: var(--muted-background);
 }
-.button--ghost:focus {
-  box-shadow: 
-      0 0 0 2px hsla(242, 50%, 55%, 1);
-  border-radius: var(--rounded-xl);
 
-}
+
 
 .button--sm {
   height: var(--space-6);

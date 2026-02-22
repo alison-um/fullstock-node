@@ -21,6 +21,10 @@
     line-height: var(--leading-6);            /*24px*/  
 }
 
+.category:hover .category__title {
+  text-decoration: underline;
+}
+
 /*  ............. */
 .category__description {
     font-weight: var(--font-normal);   /*400*/
