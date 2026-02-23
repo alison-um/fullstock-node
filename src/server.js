@@ -10,6 +10,7 @@
 
 import express from "express";
 import expressLayouts from "express-ejs-layouts";
+import { getData } from "./utils/utils.js";
 
 import {
   homeHandler,
@@ -27,6 +28,8 @@ import {
   loginHandler,
   signupHandler
 } from "./handlers.js";
+
+import { errorHandler, notFoundHandler } from "../middlewares/errorHandler.js";
 
 const app = express();
 const port = 3001;                    // Iniciar Servidor
@@ -53,9 +56,15 @@ const pageTitleByPath = {
   "/sign-up": "Registrarse"
 };
 
-app.use((req, res, next) => {
+app.use(async (req, res, next) => {
   const currentPath = req.path;
   res.locals.namePage = pageTitleByPath[currentPath] || "FullStock";
+
+  const data = await getData();
+  res.locals.countCartProducts = data.carts[0]
+    ? data.carts[0].items.reduce((total, item) => total + item.quantity, 0)
+    : 0;
+
   next();
 });
 
@@ -78,6 +87,14 @@ app.get("/terminos", termsHandler);
 app.get("/log-in", loginHandler);
 app.get("/sign-up", signupHandler);
 
+
+// Handler para manejar rutas desconocidas
+app.use(notFoundHandler);
+
+// Handler para manejar errores
+app.use(errorHandler);
+
+
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
 });
@@ -86,6 +103,6 @@ app.listen(port, () => {
 //FALTA: 
 
 // ERROR PAG 404
-// CARRITO DINAMICO (num de products en carrito)
+
 // funciones en UTILS
 // css: header separator al hacer hover no se nota 

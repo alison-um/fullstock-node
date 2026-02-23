@@ -1,4 +1,6 @@
-import { getData, getCart, saveData, getOrders, saveOrders } from "./utils/utils.js";
+import { getData, saveData } from "./utils/utils.js";
+import { parsePriceToCents, validationsPrices } from "./utils/utils.js";
+import { AppError } from "./utils/errorUtils.js";
 import { nanoid } from "nanoid";
 
 export async function homeHandler(_req, res) {
@@ -10,6 +12,18 @@ export async function homeHandler(_req, res) {
 // Trabaja con view: category.ejs
 export async function categoryHandler(req, res) {
   const { slug } = req.params;
+  const {
+    minPrice: minPriceQuery,
+    maxPrice: maxPriceQuery,
+    error: errorQuery,
+  } = req.query;
+
+  const error = errorQuery === "true";
+
+  // Validar los queries Strings
+  const minPrice = parsePriceToCents(minPriceQuery) ? minPriceQuery : -Infinity; // product.price > -Infinity
+  const maxPrice = parsePriceToCents(maxPriceQuery) ? maxPriceQuery : Infinity; // product.price < Infinity
+
   
   const data = await getData();
   const {categories , products } = data;
@@ -17,12 +31,31 @@ export async function categoryHandler(req, res) {
   const categoryFind = categories.find(
     (category) => category.slug.toLowerCase() === slug.toLowerCase()
   );
+
+  if (!categoryFind) {
+    throw new AppError(
+      "La categoría que esta buscando no se encuentra disponible",
+      404,
+    );
+  }
   
+  const validations = validationsPrices(minPriceQuery, maxPriceQuery);
+  if (error && validations.title) {
+    throw new AppError(validations.message, 404);
+  }
+
   const productsFilter = products.filter(
-    (product)  => product.categoryId === categoryFind.id
+    (product)  => 
+      product.categoryId === categoryFind.id &&
+      product.price / 100 >= minPrice &&
+      product.price / 100 <= maxPrice,
   );
+
   res.render("category", 
-    { category: categoryFind, 
+    { 
+      minPrice: minPriceQuery || "",
+      maxPrice: maxPriceQuery || "",
+      category: categoryFind, 
       products: productsFilter, 
       namePage: categoryFind.name 
     },

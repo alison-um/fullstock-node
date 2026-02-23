@@ -35,6 +35,16 @@
     gap: var(--space-8);/*32px*/
 }
 
+.products__no-stock {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.products__no-stock-title, .products__no-stock-description {
+  margin-bottom: 1rem;
+}
 
 /*      Desktop 3 columnas de 15rem mín --- */
 @media (min-width: 64rem) {

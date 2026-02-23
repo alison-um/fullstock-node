@@ -64,6 +64,9 @@
         /*pag de terminos y condiciones */
 @import url("6-components/content.css");
 
+@import url("6-components/not-found.css");
+@import url("6-components/error.css");
+
 /*  7. Utilities */
 @import url("7-utilities/utilities.css");
 
